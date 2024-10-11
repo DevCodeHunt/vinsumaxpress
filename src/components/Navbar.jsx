@@ -26,7 +26,7 @@ const MenuLink = ({ label, path }) => {
     <li>
       <Link
         onClick={onClose}
-        href={path}
+        to={path}
         className={`md:inline block text-sm  font-medium relative ${
           isActive
             ? "active-link  text-primary font-semibold"

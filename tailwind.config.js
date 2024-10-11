@@ -6,8 +6,8 @@ export default {
       colors: {
         primary: "#206D69",
         foreground: "#F3F3F3",
-        background: "#OCODOE",
-        text: "#667O85",
+        background: "#0C0D0E",
+        text: "#667085",
       },
 
       fontFamily: {

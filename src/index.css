@@ -43,7 +43,7 @@ body {
 }
 
 .secondary-btn {
-  @apply bg-foreground text-text;
+  @apply bg-foreground text-text font-semibold;
 }
 
 
