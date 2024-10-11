@@ -26,7 +26,7 @@ const Hero = () => {
           <h1 className="md:text-5xl sm:text-4xl text-3xl md:leading-snug leading-tight">
             A Revolutionary and Steadfast Solution for th
             <br className="md:block hidden" />{" "}
-            <span className="opacity-40">Global Supply Chaine</span>
+            <span className="opacity-40">Global Supply Chain</span>
           </h1>
           <p className="my-4 max-w-md w-full opacity-70">
             We are committed to delivering sustainable and transparent supply
@@ -63,7 +63,7 @@ const Hero = () => {
             <div className="xl:block hidden w-[230px] h-[230px] rounded-xl bg-neutral-50 opacity-25 absolute -right-24 bottom-20 -z-2 rotate-45"></div>
 
             {/* Left Box */}
-            <div className="xl:block hidden absolute top-28  h-[65%] bg-none border-2  rounded-xl w-[27.3rem] -left-16"></div>
+            <div className="xl:block hidden absolute top-28  h-[65%] bg-none border-2  rounded-xl w-[28.5rem] -left-16"></div>
             <div className="xl:block hidden h-[240px] w-56 bg-white rounded-xl absolute  top-1/2 -translate-y-1/2 -left-44 z-10">
               <div className="w-4 h-4 rounded-full bg-white shadow flex items-center border border-primary justify-center absolute -top-2 left-1/2 -translate-x-1/2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
