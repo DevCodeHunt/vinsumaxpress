@@ -4,6 +4,8 @@ import { ROUTES } from "../utils/routes";
 import { AlignJustify, X } from "lucide-react";
 import { useNavbarStore } from "../stores";
 import { useCallback } from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const menus = [
   { label: "Home", path: ROUTES.HOME },
@@ -84,26 +86,35 @@ const Navbar = () => {
   const toggleMenu = useNavbarStore((state) => state.toggleMenu);
 
   return (
-    <header className="w-full bg-foreground py-4 border-b">
-      <nav className="wrapper flex items-center justify-between gap-6">
-        {/* Logo */}
-        <Logo />
-        <MenuLinks />
+    <motion.header
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+    >
+      <motion.div
+        variants={fadeIn("down", "tween", 0.2, 1)}
+        className="w-full bg-foreground py-4 border-b"
+      >
+        <nav className="wrapper flex items-center justify-between gap-6">
+          {/* Logo */}
+          <Logo />
+          <MenuLinks />
 
-        <div className="hidden md:flex items-center gap-4">
-          <button className="btn text-primary font-semibold opacity-90">
-            Branch Locator
+          <div className="hidden md:flex items-center gap-4">
+            <button className="btn text-primary font-semibold opacity-90">
+              Branch Locator
+            </button>
+            <button className="btn primary-btn">Track</button>
+          </div>
+
+          <button onClick={toggleMenu} className="md:hidden block">
+            <AlignJustify size={28} />
           </button>
-          <button className="btn primary-btn">Track</button>
-        </div>
-
-        <button onClick={toggleMenu} className="md:hidden block">
-          <AlignJustify size={28} />
-        </button>
-      </nav>
-
+        </nav>
+      </motion.div>
       <Menu />
-    </header>
+    </motion.header>
   );
 };
 

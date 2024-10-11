@@ -8,12 +8,21 @@ import { Check, ChevronDown, ChevronUp, MoveRight } from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
 import { Link } from "react-router-dom";
 import { useCallback, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn, slideIn, staggerContainer, zoomIn } from "../utils/motion";
+import AnimationWrapper from "../components/AnimationWrapper";
 
 const Hero = () => {
   return (
-    <section>
-      <div className="wrapper grid md:grid-cols-2 grid-cols-1 items-center md:gap-6 gap-10 py-10">
-        <div>
+    <section className="min-h-screen overflow-hidden">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="wrapper grid md:grid-cols-2 grid-cols-1 items-center md:gap-6 gap-10 py-10"
+      >
+        <motion.div variants={fadeIn("up", "tween", 0.2, 1)}>
           <h1 className="md:text-5xl sm:text-4xl text-3xl md:leading-snug leading-tight">
             A Revolutionary and Reliable Solution for{" "}
             <br className="md:block hidden" />{" "}
@@ -31,9 +40,9 @@ const Hero = () => {
             </button>
             <button className="btn secondary-btn">View Live Demo</button>
           </div>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={fadeIn("up", "tween", 0.3, 1)}>
           <div className="relative rounded-3xl w-[320px] h-[580px] mx-auto hero drop-shadow-lg shadow-lg">
             <video
               muted
@@ -71,8 +80,8 @@ const Hero = () => {
               <div className="xl:block hidden h-12 w-48 left-6 bg-foreground rounded-xl rotate-6 absolute -bottom-9"></div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
@@ -93,8 +102,17 @@ const Clients = () => {
     },
   };
   return (
-    <section className="py-20">
-      <div className="wrapper">
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="py-20"
+    >
+      <motion.div
+        variants={fadeIn("right", "tween", 0.2, 1)}
+        className="wrapper"
+      >
         <p className="text-center opacity-70 mb-6">
           Industry leaders trust Payooble to grow their revenue
         </p>
@@ -115,8 +133,8 @@ const Clients = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
@@ -176,10 +194,19 @@ const Stories = () => {
     }
   }, [complete]);
   return (
-    <section className="bg-background text-white py-20 mt-10">
-      <div className="wrapper flex items-center md:flex-row flex-col gap-10">
+    <section className="bg-background text-white min-h-screen flex items-center py-20 mt-10">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="wrapper flex items-center md:flex-row flex-col gap-10"
+      >
         <div>
-          <div className="h-[350px] w-[320px] rounded-lg relative">
+          <motion.div
+            variants={zoomIn(0.4, 1)}
+            className="h-[350px] w-[320px] rounded-lg relative"
+          >
             <div className="flex flex-col justify-end pb-8 px-4 pl-6 gap-3 absolute inset-0 bg-background/20 text-white z-10">
               <p className="text-sm opacity-90 ">Consumer Stories</p>
               <div className="flex gap-2">
@@ -224,20 +251,15 @@ const Stories = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* <img
-              src={strory.image}
-              alt={strory.author}
-              className="w-full h-full object-cover rounded-lg"
-            /> */}
-          </div>
+          </motion.div>
         </div>
-        <div>
+        <motion.div variants={fadeIn("down", "tween", 0.2, 1)}>
           <p className="text-4xl">Designed Based on</p>
           <p className="text-4xl text-slate-500">Our Consumers Needs</p>
           <p className="my-6 max-w-xl">{strory.description}</p>
           <small className="opacity-60">- {strory.author}</small>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
@@ -250,11 +272,15 @@ const Faqs = () => {
     []
   );
   return (
-    <div className="max-w-xl mx-auto  w-full flex flex-col gap-6">
+    <motion.div
+      variants={fadeIn("up", "tween", 0.2, 1)}
+      className="max-w-xl mx-auto  w-full flex flex-col gap-6"
+    >
       {faqs.map((faq, index) => {
         const isActive = active === index;
         return (
-          <div
+          <AnimationWrapper
+            transition={{ duration: 1, delay: index * 0.2 }}
             onClick={() => handleActive(index)}
             key={index}
             className="border rounded-lg p-4 space-y-4 transition-all duration-1000"
@@ -270,10 +296,10 @@ const Faqs = () => {
             >
               {faq.answer}
             </div>
-          </div>
+          </AnimationWrapper>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 
@@ -282,15 +308,26 @@ const Home = () => {
     <>
       <Hero />
       <Clients />
-      <section className="py-10">
-        <div className="wrapper space-y-10">
-          <SectionHeader
-            title="Our Customer Platform"
-            subTitle="Everyone's Business"
-          />
+      <section className="py-10 overflow-hidden min-h-screen">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper space-y-10"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
+            <SectionHeader
+              title="Our Customer Platform"
+              subTitle="Everyone's Business"
+            />
+          </motion.div>
 
           <div className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 gap-6 ">
-            <div className="bg-[#E4EBF0] rounded-lg p-4">
+            <motion.div
+              variants={fadeIn("up", "tween", 0.2, 1)}
+              className="bg-[#E4EBF0] rounded-lg p-4"
+            >
               <div className="w-full bg-white rounded-lg h-48"></div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
@@ -305,9 +342,12 @@ const Home = () => {
                   Learn more
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#F4F2EB] rounded-lg p-4">
+            <motion.div
+              variants={fadeIn("up", "tween", 0.3, 1.2)}
+              className="bg-[#F4F2EB] rounded-lg p-4"
+            >
               <div className="w-full bg-white rounded-lg h-48"></div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
@@ -322,9 +362,12 @@ const Home = () => {
                   Learn more
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#D0E4DB] rounded-lg p-4">
+            <motion.div
+              variants={fadeIn("up", "tween", 0.4, 1.4)}
+              className="bg-[#D0E4DB] rounded-lg p-4"
+            >
               <div className="w-full bg-white rounded-lg h-48"></div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
@@ -339,23 +382,37 @@ const Home = () => {
                   Learn more
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <Stories />
 
-      <section className="py-20 bg-foreground">
-        <div className="wrapper space-y-20">
-          <SectionHeader
-            title="Everything you need to Manage"
-            subTitle="and control Global Spend"
-          />
+      <section className="py-20 bg-foreground min-h-screen overflow-hidden">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper space-y-20"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
+            <SectionHeader
+              title="Everything you need to Manage"
+              subTitle="and control Global Spend"
+            />
+          </motion.div>
 
-          <div className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 min-[576px]:gap-14 gap-8">
+          <motion.div
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 min-[576px]:gap-14 gap-8 overflow-hidden"
+          >
             {/* Card 1 */}
-            <div className="bg-white h-full rounded-lg p-6">
+            <motion.div
+              variants={slideIn("up", "tween", 0.2, 1)}
+              className="bg-white h-full rounded-lg p-6"
+            >
               <h1 className="text-3xl">Premium Cards</h1>
               <p className="my-2 text-sm text-neutral-500">
                 Provides a simple and convenient interface for you to bill
@@ -398,10 +455,14 @@ const Home = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-lg p-6 border-2 border-primary min-[576px]:scale-110 relative">
+
+            <motion.div
+              variants={slideIn("up", "tween", 0.3, 1.1)}
+              className="bg-white rounded-lg p-6 border-2 border-primary min-[576px]:scale-110 relative"
+            >
               <div className="w-full py-3 text-sm absolute left-0 right-0 top-0 bg-primary text-white text-center">
                 MOST POPULAR ️‍🔥
               </div>
@@ -446,10 +507,13 @@ const Home = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="bg-white h-full rounded-lg p-6">
+            <motion.div
+              variants={slideIn("down", "tween", 0.4, 1.2)}
+              className="bg-white h-full rounded-lg p-6"
+            >
               <h1 className="text-3xl">Enterprise</h1>
               <p className="my-2 text-sm text-neutral-500">
                 Enable recuring payments with e-wallets, credit cards and direct
@@ -492,73 +556,115 @@ const Home = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <section className="py-20">
-        <div className="wrapper space-y-12">
-          <div className="flex flex-col items-center justify-center gap-3">
+      <section className="py-20 min-h-screen overflow-hidden">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper space-y-12"
+        >
+          <motion.div
+            variants={fadeIn("right", "tween", 0.2, 1)}
+            className="flex flex-col items-center justify-center gap-3"
+          >
             <h1 className="text-3xl text-center">FAQs</h1>
             <p className="text-sm text-gray-600 text-center max-w-sm">
               Giving you the control, observability, and flexibility you need to
               build your card program your way.
             </p>
-          </div>
+          </motion.div>
           <Faqs />
-        </div>
+        </motion.div>
       </section>
 
-      <section className="flex md:flex-row flex-col">
-        <div className="relative md:w-1/2 h-80">
-          <div className="absolute inset-0 z-10 p-6  bg-background/30 text-white flex items-end">
-            <div className="flex flex-col justify-center items-start gap-2 ">
-              <h3 className="text-lg">Direct Network Integration</h3>
-              <p className="text-sm">The only platform where you can gp live</p>
-              <button className="btn border-2 border-white mt-3">
-                Learn more
-              </button>
+      <section className="min-h-screen">
+        <div className="flex md:flex-row flex-col">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className="relative md:w-1/2 h-80"
+          >
+            <div className="absolute inset-0 z-10 p-6  bg-background/30 text-white flex items-end">
+              <motion.div
+                variants={fadeIn("right", "tween", 0.2, 1)}
+                className="flex flex-col justify-center items-start gap-2 "
+              >
+                <h3 className="text-lg">Direct Network Integration</h3>
+                <p className="text-sm">
+                  The only platform where you can gp live
+                </p>
+                <button className="btn border-2 border-white mt-3">
+                  Learn more
+                </button>
+              </motion.div>
             </div>
-          </div>
-          <img
-            src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=400"
-            alt="image"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="relative md:w-1/2 h-80">
-          <div className="absolute inset-0 z-10 p-6 bg-background/30 text-white flex items-end">
-            <div className="flex flex-col justify-center items-start gap-2 ">
-              <h3 className="text-lg">Scalable Card Platform</h3>
-              <p className="text-sm">The only platform where you can gp live</p>
-              <button className="btn border-2 border-white mt-3">
-                Learn more
-              </button>
+            <img
+              src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="image"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className="relative md:w-1/2 h-80"
+          >
+            <div className="absolute inset-0 z-10 p-6 bg-background/30 text-white flex items-end">
+              <motion.div
+                variants={fadeIn("right", "tween", 0.2, 1)}
+                className="flex flex-col justify-center items-start gap-2 "
+              >
+                <h3 className="text-lg">Scalable Card Platform</h3>
+                <p className="text-sm">
+                  The only platform where you can gp live
+                </p>
+                <button className="btn border-2 border-white mt-3">
+                  Learn more
+                </button>
+              </motion.div>
             </div>
-          </div>
-          <img
-            src="https://images.pexels.com/photos/1267697/pexels-photo-1267697.jpeg?auto=compress&cs=tinysrgb&w=400"
-            alt="image"
-            className="w-full h-full object-cover"
-          />
+            <img
+              src="https://images.pexels.com/photos/1267697/pexels-photo-1267697.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="image"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </div>
-      </section>
 
-      <section className="bg-background text-white py-20">
-        <div className="wrapper space-y-6 flex flex-col items-center justify-center">
-          <SectionHeader
-            title="Access Financial Technology With"
-            subTitle="Maxium Security Form Your Hands"
-          />
-          <p className="text-sm opacity-80">
-            Everything you need to build the credit, debit, or payooble product
-            you want
-          </p>
-          <button className="btn border-2 border-white">
-            Get Started Now <MoveRight size={18} />
-          </button>
-        </div>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="bg-background text-white py-20"
+        >
+          <motion.div
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="wrapper space-y-6 flex flex-col items-center justify-center"
+          >
+            <SectionHeader
+              title="Access Financial Technology With"
+              subTitle="Maxium Security Form Your Hands"
+            />
+            <p className="text-sm opacity-80">
+              Everything you need to build the credit, debit, or payooble
+              product you want
+            </p>
+            <button className="btn border-2 border-white">
+              Get Started Now <MoveRight size={18} />
+            </button>
+          </motion.div>
+        </motion.div>
       </section>
     </>
   );
