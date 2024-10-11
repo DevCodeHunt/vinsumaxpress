@@ -24,21 +24,21 @@ const Hero = () => {
       >
         <motion.div variants={fadeIn("up", "tween", 0.2, 1)}>
           <h1 className="md:text-5xl sm:text-4xl text-3xl md:leading-snug leading-tight">
-            A Revolutionary and Reliable Solution for{" "}
+            A Revolutionary and Steadfast Solution for th
             <br className="md:block hidden" />{" "}
-            <span className="opacity-40">Global Finance</span>
+            <span className="opacity-40">Global Supply Chaine</span>
           </h1>
           <p className="my-4 max-w-md w-full opacity-70">
-            We provide sustinable and open global financial solutions throughout
-            the world
+            We are committed to delivering sustainable and transparent supply
+            chain solutions on a global scale.
           </p>
 
           <div className="flex items-center gap-2">
             <button className="btn primary-btn">
-              Learn More
+              Our Services
               <MoveRight />
             </button>
-            <button className="btn secondary-btn">View Live Demo</button>
+            <button className="btn secondary-btn">Contact us</button>
           </div>
         </motion.div>
 
@@ -114,7 +114,8 @@ const Clients = () => {
         className="wrapper"
       >
         <p className="text-center opacity-70 mb-6">
-          Industry leaders trust Payooble to grow their revenue
+          Vinsum is the trusted choice of industry leaders for accelerating
+          revenue growth.
         </p>
         <Swiper
           spaceBetween={20}
@@ -318,8 +319,8 @@ const Home = () => {
         >
           <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
             <SectionHeader
-              title="Our Customer Platform"
-              subTitle="Everyone's Business"
+              title="Why Us?"
+              subTitle="top choice for everyone because..."
             />
           </motion.div>
 
@@ -331,12 +332,13 @@ const Home = () => {
               <div className="w-full bg-white rounded-lg h-48"></div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
-                  Account Managment
+                  Project Managment
                 </p>
-                <h2 className="text-2xl">Accounts payable & purchase orders</h2>
+                <h2 className="text-2xl">Single Window Solution</h2>
                 <p className="my-3 opacity-70">
-                  Ent-to-end accounts payable software including purchase
-                  orders, invoice
+                  Discover our comprehensive supply chain solutions, covering
+                  MMT, warehousing, 3PL, inventory management, returnable
+                  packaging, 4PL, in-plant logistics, and project management.
                 </p>
                 <Link to="#" className="border-b-2 border-background">
                   Learn more
@@ -351,12 +353,15 @@ const Home = () => {
               <div className="w-full bg-white rounded-lg h-48"></div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
-                  Cash Managment
+                  Product Managment
                 </p>
-                <h2 className="text-2xl">All your spend. One platform</h2>
+                <h2 className="text-2xl">
+                  Reliability, Expertise, Flexibility: The Ultimate Combination!
+                </h2>
                 <p className="my-3 opacity-70">
-                  Automate your most tedious tasks like manual data entry,
-                  correcting mistakes.
+                  With 18 years of tech-driven logistics and supply chain
+                  management expertise, we've served over 1000 satisfied
+                  customers with flexible and customized products and services.
                 </p>
                 <Link to="#" className="border-b-2 border-background">
                   Learn more
@@ -371,12 +376,12 @@ const Home = () => {
               <div className="w-full bg-white rounded-lg h-48"></div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
-                  Multiple Currencies
+                  Cost Managment
                 </p>
-                <h2 className="text-2xl">Dedicated in multiple currencies</h2>
+                <h2 className="text-2xl">Cost-effective & Sustainable</h2>
                 <p className="my-3 opacity-70">
-                  Dedicated IBANs in multiple currencies safegurding of funds in
-                  line with PSD2.
+                  We offer cost-effective solutions that are designed to stand
+                  the test of time.
                 </p>
                 <Link to="#" className="border-b-2 border-background">
                   Learn more
