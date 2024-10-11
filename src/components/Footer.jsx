@@ -28,8 +28,8 @@ const Footer = () => {
   const socialLink =
     "text-lg text-background bg-[#F3F4F6] w-10 h-10 rounded-full flex items-center justify-center cursor-pointer";
   return (
-    <footer className="py-20 space-y-12">
-      <div className="wrapper">
+    <footer className="py-20">
+      <div className="wrapper space-y-12">
         <div className="pb-8 border-b border-neutral-200 flex md:items-center md:flex-row flex-col md:gap-4 gap-8">
           <div className="md:w-1/2 w-full">
             <h3 className="text-lg font-semibold">Lets Connected ️‍🔥</h3>
