@@ -11,8 +11,9 @@ import { useCallback, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn, staggerContainer, zoomIn } from "../utils/motion";
 import AnimationWrapper from "../components/AnimationWrapper";
+import { useMediaQuery } from "react-responsive";
 
-const Hero = () => {
+const Hero = ({ tablet }) => {
   return (
     <section className="min-h-screen overflow-hidden">
       <motion.div
@@ -22,7 +23,13 @@ const Hero = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="wrapper grid md:grid-cols-2 grid-cols-1 items-center md:gap-6 gap-10 py-10"
       >
-        <motion.div variants={fadeIn("up", "tween", 0.2, 1)}>
+        <motion.div
+          variants={
+            tablet
+              ? fadeIn("right", "tween", 0.2, 1)
+              : fadeIn("up", "tween", 0.2, 1)
+          }
+        >
           <h1 className="md:text-5xl sm:text-4xl text-3xl md:leading-snug leading-tight">
             A Revolutionary and Steadfast Solution for th
             <br className="md:block hidden" />{" "}
@@ -42,7 +49,13 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn("up", "tween", 0.3, 1)}>
+        <motion.div
+          variants={
+            tablet
+              ? fadeIn("left", "tween", 0.3, 1)
+              : fadeIn("up", "tween", 0.3, 1)
+          }
+        >
           <div className="relative rounded-3xl w-[320px] h-[580px] mx-auto hero drop-shadow-lg shadow-lg">
             <video
               muted
@@ -139,7 +152,7 @@ const Clients = () => {
   );
 };
 
-const Stories = () => {
+const Stories = ({ tablet }) => {
   const stories = [
     {
       image:
@@ -206,7 +219,7 @@ const Stories = () => {
         <div>
           <motion.div
             variants={zoomIn(0.4, 1)}
-            className="h-[350px] w-[320px] rounded-lg relative"
+            className="md:h-[450px] h-[350px] md:w-[400px] w-[320px] rounded-lg relative"
           >
             <div className="flex flex-col justify-end pb-8 px-4 pl-6 gap-3 absolute inset-0 bg-background/20 text-white z-10">
               <p className="text-sm opacity-90 ">Consumer Stories</p>
@@ -254,7 +267,13 @@ const Stories = () => {
             </Swiper>
           </motion.div>
         </div>
-        <motion.div variants={fadeIn("down", "tween", 0.2, 1)}>
+        <motion.div
+          variants={
+            tablet
+              ? fadeIn("up", "tween", 0.2, 1)
+              : fadeIn("down", "tween", 0.2, 1)
+          }
+        >
           <p className="text-4xl">Designed Based on</p>
           <p className="text-4xl text-slate-500">Our Consumers Needs</p>
           <p className="my-6 max-w-xl">{strory.description}</p>
@@ -305,11 +324,13 @@ const Faqs = () => {
 };
 
 const Home = () => {
+  const isTabletScreen = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 576px)" });
   return (
     <>
-      <Hero />
+      <Hero tablet={isTabletScreen} />
       <Clients />
-      <section className="py-10 overflow-hidden min-h-screen">
+      <section className="py-10  overflow-hidden min-h-screen">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -326,7 +347,11 @@ const Home = () => {
 
           <div className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 gap-6 ">
             <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
+              variants={
+                isMobileScreen
+                  ? fadeIn("right", "tween", 0.2, 1)
+                  : fadeIn("up", "tween", 0.2, 1)
+              }
               className="bg-[#E4EBF0] rounded-lg p-4"
             >
               <div className="w-full bg-white rounded-lg h-48"></div>
@@ -347,7 +372,11 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              variants={fadeIn("up", "tween", 0.3, 1.2)}
+              variants={
+                isMobileScreen
+                  ? fadeIn("right", "tween", 0.5, 1.5)
+                  : fadeIn("up", "tween", 0.3, 1.2)
+              }
               className="bg-[#F4F2EB] rounded-lg p-4"
             >
               <div className="w-full bg-white rounded-lg h-48"></div>
@@ -360,7 +389,7 @@ const Home = () => {
                 </h2>
                 <p className="my-3 opacity-70">
                   With 18 years of tech-driven logistics and supply chain
-                  management expertise, we've served over 1000 satisfied
+                  management expertise, we&#39;ve served over 1000 satisfied
                   customers with flexible and customized products and services.
                 </p>
                 <Link to="#" className="border-b-2 border-background">
@@ -370,7 +399,11 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              variants={fadeIn("up", "tween", 0.4, 1.4)}
+              variants={
+                isMobileScreen
+                  ? fadeIn("right", "tween", 0.8, 1.6)
+                  : fadeIn("up", "tween", 0.4, 1.4)
+              }
               className="bg-[#D0E4DB] rounded-lg p-4"
             >
               <div className="w-full bg-white rounded-lg h-48"></div>
@@ -392,7 +425,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <Stories />
+      <Stories tablet={isTabletScreen} />
 
       <section className="py-20 bg-foreground min-h-screen overflow-hidden">
         <motion.div
@@ -411,7 +444,7 @@ const Home = () => {
 
           <motion.div
             variants={fadeIn("up", "tween", 0.2, 1)}
-            className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 min-[576px]:gap-14 gap-8 overflow-hidden"
+            className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 gap-8 overflow-hidden"
           >
             {/* Card 1 */}
             <motion.div
