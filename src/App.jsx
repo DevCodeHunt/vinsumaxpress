@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ROUTES } from "./utils/routes";
 import { Toaster } from "react-hot-toast";
+import SplashScreen from "./components/SplashScreen";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -15,7 +16,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 export default function App() {
   return (
     <main>
-      <Suspense fallback={<div>Loading...</div>}>
+      
+      <Suspense fallback={<SplashScreen />}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
