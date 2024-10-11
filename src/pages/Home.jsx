@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="wrapper grid md:grid-cols-2 grid-cols-1 items-center md:gap-6 gap-10 py-10">
         <div>
           <h1 className="md:text-5xl sm:text-4xl text-3xl md:leading-snug leading-tight">
-            A Revolutionaru and Reiable Solution for{" "}
+            A Revolutionary and Reliable Solution for{" "}
             <br className="md:block hidden" />{" "}
             <span className="opacity-40">Global Finance</span>
           </h1>
@@ -34,15 +34,43 @@ const Hero = () => {
         </div>
 
         <div>
-          <video
-            muted
-            loop
-            autoPlay
-            title="Video Indroduction"
-            className="w-[320px] h-[580px] rounded-3xl object-cover mx-auto border-none overflow-hidden"
-          >
-            <source src="/videos/vinsum-explore.mp4" type="video/mp4"></source>
-          </video>
+          <div className="relative rounded-3xl w-[320px] h-[580px] mx-auto hero drop-shadow-lg shadow-lg">
+            <video
+              muted
+              loop
+              autoPlay
+              title="Video Indroduction"
+              className="w-full absolute inset-0 z-10 h-full rounded-3xl object-cover border-none overflow-hidden"
+            >
+              <source
+                src="/videos/vinsum-explore.mp4"
+                type="video/mp4"
+              ></source>
+            </video>
+            {/* circle */}
+            <div className="xl:block hidden w-[180px] h-[180px] rounded-full bg-neutral-50 opacity-30 absolute -left-10 top-10 -z-2"></div>
+            <div className="xl:block hidden w-[220px] h-[220px] rounded-full bg-neutral-50 opacity-20 -z-2 absolute -left-40 bottom-4"></div>
+            {/* Rectangle */}
+            <div className="xl:block hidden w-[230px] h-[230px] rounded-xl bg-neutral-50 opacity-25 absolute -right-24 bottom-20 -z-2 rotate-45"></div>
+
+            {/* Left Box */}
+            <div className="xl:block hidden absolute top-28  h-[65%] bg-none border-2  rounded-xl w-[27.3rem] -left-16"></div>
+            <div className="xl:block hidden h-[240px] w-56 bg-white rounded-xl absolute  top-1/2 -translate-y-1/2 -left-44 z-10">
+              <div className="w-4 h-4 rounded-full bg-white shadow flex items-center border border-primary justify-center absolute -top-2 left-1/2 -translate-x-1/2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+              </div>
+            </div>
+
+            <div className="xl:block hidden h-24 w-60 rounded-xl bg-white absolute -right-48 top-[4.5rem] z-10"></div>
+
+            <div className="xl:block hidden w-60 h-28 rounded-xl bg-white absolute -right-48 bottom-16 z-10">
+              <div className="w-4 h-4 rounded-full bg-white border border-primary shadow flex items-center justify-center absolute -top-2 left-1/2 -translate-x-1/2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+              </div>
+
+              <div className="xl:block hidden h-12 w-48 left-6 bg-foreground rounded-xl rotate-6 absolute -bottom-9"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -149,9 +177,9 @@ const Stories = () => {
   }, [complete]);
   return (
     <section className="bg-background text-white py-20 mt-10">
-      <div className="wrapper flex items-center gap-10">
+      <div className="wrapper flex items-center md:flex-row flex-col gap-10">
         <div>
-          <div className="h-[320px] w-[320px] rounded-lg relative">
+          <div className="h-[350px] w-[320px] rounded-lg relative">
             <div className="flex flex-col justify-end pb-8 px-4 pl-6 gap-3 absolute inset-0 bg-background/20 text-white z-10">
               <p className="text-sm opacity-90 ">Consumer Stories</p>
               <div className="flex gap-2">

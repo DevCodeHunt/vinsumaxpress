@@ -65,3 +65,19 @@ body {
 .underline-hover:hover::before {
   transform: scaleX(1);
 }
+
+/* .hero {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
