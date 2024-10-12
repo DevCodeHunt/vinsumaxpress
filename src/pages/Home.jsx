@@ -1,10 +1,17 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, EffectCoverflow, EffectFade } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { clients, faqs } from "../constants";
-import { Check, ChevronDown, ChevronUp, MoveRight } from "lucide-react";
+import { cardData, clients, faqs } from "../constants";
+import {
+  Check,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  MoveRight,
+} from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
 import { Link } from "react-router-dom";
 import { useCallback, useRef, useState } from "react";
@@ -12,7 +19,6 @@ import { motion } from "framer-motion";
 import {
   fadeIn,
   roateVariant,
-  slideIn,
   staggerContainer,
   zoomIn,
 } from "../utils/motion";
@@ -329,6 +335,130 @@ const Faqs = () => {
   );
 };
 
+const Card = ({
+  title,
+  description,
+  price,
+  priceLabel,
+  features,
+  isActive,
+}) => {
+  return (
+    <div
+      className={`bg-white h-full rounded-lg p-6 ${
+        isActive ? "border-2 border-primary" : ""
+      }`}
+    >
+      <h1 className="text-3xl">{title}</h1>
+      <p className="my-2 text-sm text-neutral-500">{description}</p>
+
+      <div className="my-4">
+        <p className="text-2xl font-bold leading-none">{price}</p>
+        <small className="font-semibold text-xs">{priceLabel}</small>
+      </div>
+
+      <button className="btn primary-btn w-full">Get started free</button>
+
+      <div className="mt-4 space-y-2">
+        <p className="text-sm text-neutral-600">Features</p>
+        <ul className="space-y-2">
+          {features.map((feature, index) => (
+            <li
+              key={index}
+              className="text-sm text-neutral-600 flex items-center gap-1"
+            >
+              <Check size={16} />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const Cards = () => {
+  const swiperRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const breakpoints = {
+    0: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  };
+
+  const onSlideChange = (swiper) => {
+    setCurrentIndex(swiper.activeIndex);
+  };
+
+  const prevSlide = useCallback(() => {
+    swiperRef.current?.swiper.slidePrev();
+  }, []);
+
+  const nextSlide = useCallback(() => {
+    swiperRef.current?.swiper.slideNext();
+  }, []);
+
+  return (
+    <div className="relative">
+      <div className="min-[640px]:hidden flex items-center gap-4 justify-end mb-6">
+        <button
+          onClick={prevSlide}
+          className="w-8 h-8 flex items-center justify-center border-2 border-primary text-primary hover:bg-primary hover:text-white transition duration-300 rounded-full"
+        >
+          <ChevronLeft size={20} className="" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="w-8 h-8 flex items-center justify-center border-2 border-primary text-primary hover:bg-primary hover:text-white transition duration-300 rounded-full"
+        >
+          <ChevronRight />
+        </button>
+      </div>
+      <Swiper
+        ref={swiperRef}
+        spaceBetween={20}
+        slidesPerView={3}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        onSlideChange={onSlideChange}
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        modules={[Autoplay, EffectCoverflow]}
+        breakpoints={breakpoints}
+      >
+        {cardData.map((card, index) => (
+          <SwiperSlide key={index}>
+            <Card
+              isActive={currentIndex === index}
+              title={card.title}
+              description={card.description}
+              price={card.price}
+              priceLabel={card.priceLabel}
+              features={card.features}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
 const Home = () => {
   const isTabletScreen = useMediaQuery({ query: "(max-width: 768px)" });
   const isMobileScreen = useMediaQuery({ query: "(max-width: 576px)" });
@@ -442,7 +572,7 @@ const Home = () => {
 
       <Stories tablet={isTabletScreen} />
 
-      <section className="py-20 bg-foreground min-h-screen overflow-hidden">
+      <section className="py-20 bg-foreground min-h-screen">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -456,12 +586,13 @@ const Home = () => {
               subTitle="and control Global Spend"
             />
           </motion.div>
+          <Cards />
 
-          <motion.div
+          {/* <motion.div
             variants={fadeIn("up", "tween", 0.2, 1)}
             className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 gap-8 overflow-hidden"
           >
-            {/* Card 1 */}
+           
             <motion.div
               variants={slideIn("up", "tween", 0.2, 1)}
               className="bg-white h-full rounded-lg p-6"
@@ -510,7 +641,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Card 2 */}
+           
 
             <motion.div
               variants={slideIn("up", "tween", 0.3, 1.1)}
@@ -562,7 +693,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Card 3 */}
+           
             <motion.div
               variants={slideIn("down", "tween", 0.4, 1.2)}
               className="bg-white h-full rounded-lg p-6"
@@ -610,7 +741,9 @@ const Home = () => {
                 </ul>
               </div>
             </motion.div>
-          </motion.div>
+
+           
+          </motion.div> */}
         </motion.div>
       </section>
 

@@ -279,3 +279,61 @@ export const social = {
   linkedin: "https://www.linkedin.com/company/vinsum-axpress",
   youtube: "www.youtube.com/@vinsumaxpressindiapvtltd.8044",
 };
+
+export const cardData = [
+  {
+    title: "Premium Cards",
+    description:
+      "Provides a simple and convenient interface for you to bill customers",
+    price: "$90",
+    priceLabel: "Per Active USER/Month",
+    features: [
+      "Dedicated bank 1 accounts",
+      "Visa Credit and Debit cards",
+      "Automated notifications",
+      "Advanced card controls and spend policies",
+      "Carbon emissions tracking on card spend",
+    ],
+  },
+  {
+    title: "All-In-One Spend",
+    description: "Scale up your business by automating your payouts",
+    price: "$39",
+    priceLabel: "Per Active USER/Month",
+    features: [
+      "Dedicated bank 1 accounts",
+      "Visa Credit and Debit cards",
+      "Automated notifications",
+      "Advanced card controls and spend policies",
+      "Carbon emissions tracking on card spend",
+    ],
+  },
+  {
+    title: "Enterprise",
+    description:
+      "Enable recurring payments with e-wallets, credit cards and direct debit",
+    price: "$69",
+    priceLabel: "Per Active USER/Month",
+    features: [
+      "Dedicated bank 1 accounts",
+      "Visa Credit and Debit cards",
+      "Automated notifications",
+      "Advanced card controls and spend policies",
+      "Carbon emissions tracking on card spend",
+    ],
+  },
+  {
+    title: "Premium Cards",
+    description:
+      "Provides a simple and convenient interface for you to bill customers",
+    price: "$90",
+    priceLabel: "Per Active USER/Month",
+    features: [
+      "Dedicated bank 1 accounts",
+      "Visa Credit and Debit cards",
+      "Automated notifications",
+      "Advanced card controls and spend policies",
+      "Carbon emissions tracking on card spend",
+    ],
+  },
+];
