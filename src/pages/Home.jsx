@@ -9,7 +9,13 @@ import SectionHeader from "../components/SectionHeader";
 import { Link } from "react-router-dom";
 import { useCallback, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn, staggerContainer, zoomIn } from "../utils/motion";
+import {
+  fadeIn,
+  roateVariant,
+  slideIn,
+  staggerContainer,
+  zoomIn,
+} from "../utils/motion";
 import AnimationWrapper from "../components/AnimationWrapper";
 import { useMediaQuery } from "react-responsive";
 
@@ -354,7 +360,10 @@ const Home = () => {
               }
               className="bg-[#E4EBF0] rounded-lg p-4"
             >
-              <div className="w-full bg-white rounded-lg h-48"></div>
+              <motion.div
+                variants={roateVariant(0.5, 1, -19)}
+                className="w-full bg-white rounded-lg h-48"
+              ></motion.div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
                   Project Managment
@@ -379,7 +388,10 @@ const Home = () => {
               }
               className="bg-[#F4F2EB] rounded-lg p-4"
             >
-              <div className="w-full bg-white rounded-lg h-48"></div>
+              <motion.div
+                variants={roateVariant(0.7, 1.2, -19)}
+                className="w-full bg-white rounded-lg h-48"
+              ></motion.div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
                   Product Managment
@@ -406,7 +418,10 @@ const Home = () => {
               }
               className="bg-[#D0E4DB] rounded-lg p-4"
             >
-              <div className="w-full bg-white rounded-lg h-48"></div>
+              <motion.div
+                variants={roateVariant(0.9, 1.3, -19)}
+                className="w-full bg-white rounded-lg h-48"
+              ></motion.div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
                   Cost Managment

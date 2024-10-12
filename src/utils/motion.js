@@ -63,6 +63,25 @@ export const zoomIn = (delay, duration) => ({
   },
 });
 
+export const roateVariant = (delay, duration, rotation) => ({
+  hidden: {
+    scale: 0,
+    opacity: 0,
+    rotate: rotation,
+  },
+  show: {
+    rotate: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      delay,
+      duration,
+      ease: "easeOut",
+    },
+  },
+});
+
 export const textVariant2 = {
   hidden: {
     opacity: 0,
