@@ -337,3 +337,30 @@ export const cardData = [
     ],
   },
 ];
+
+export const serviceData = [
+  {
+    name: "Medtronic",
+    label: "Electric car charging",
+    image:
+      "https://cdn.pixabay.com/photo/2020/10/24/07/29/man-5680696_1280.jpg",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+  },
+  {
+    name: "Medtronic XYZ",
+    label: "Residental solar panels",
+    image:
+      "https://cdn.pixabay.com/photo/2024/04/09/08/30/ai-generated-8685407_1280.jpg",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+  },
+  {
+    name: "Medtronic ABC",
+    label: "Wind power industry",
+    image:
+      "https://cdn.pixabay.com/photo/2022/10/13/10/24/solar-panel-7518786_1280.jpg",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+  },
+];

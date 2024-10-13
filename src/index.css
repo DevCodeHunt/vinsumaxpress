@@ -46,10 +46,6 @@ body {
   @apply bg-foreground text-text font-semibold;
 }
 
-
-
-
-
 .active-link::before {
   content: "";
   @apply md:block hidden absolute w-full h-[2px] bg-primary left-0 -bottom-[2px] rounded-full transition duration-300;
@@ -64,6 +60,15 @@ body {
 
 .underline-hover:hover::before {
   transform: scaleX(1);
+}
+
+.radial-gradient-bg {
+  aspect-ratio: 1;
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    transparent 1rem,
+    var(1rem, white) calc(1rem + 1px)
+  );
 }
 
 /* .hero {
