@@ -12,6 +12,7 @@ const Services = lazy(() => import("./pages/Services"));
 const Tools = lazy(() => import("./pages/Tools"));
 const MediaCenter = lazy(() => import("./pages/MediaCenter"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Career = lazy(() => import("./pages/Career"));
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path={ROUTES.TOOLS} element={<Tools />} />
           <Route path={ROUTES.MEDIACENTER} element={<MediaCenter />} />
           <Route path={ROUTES.CONTACT} element={<Contact />} />
+          <Route path={ROUTES.CAREER} element={<Career />} />
         </Routes>
         <Footer />
       </Suspense>

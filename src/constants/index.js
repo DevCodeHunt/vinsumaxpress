@@ -1,3 +1,14 @@
+import {
+  BriefcaseMedical,
+  Building2,
+  Code,
+  Database,
+  Megaphone,
+  MonitorPlay,
+  Music,
+  PenTool,
+} from "lucide-react";
+
 export const clients = [
   {
     logo: "https://vinsumaxpress.com/assets/img/clients/cnh-industrial-logo.png",
@@ -362,5 +373,128 @@ export const serviceData = [
       "https://cdn.pixabay.com/photo/2022/10/13/10/24/solar-panel-7518786_1280.jpg",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+  },
+];
+
+export const careerCategories = [
+  {
+    name: "Graphics & Design",
+    icon: PenTool,
+    position: 32,
+  },
+  {
+    name: "Code & Programming",
+    icon: Code,
+    position: 45,
+  },
+  {
+    name: "Digital Marketing",
+    icon: Megaphone,
+    position: 34,
+  },
+  {
+    name: "Video & Animation",
+    icon: MonitorPlay,
+    position: 24,
+  },
+  {
+    name: "Music & Audio",
+    icon: Music,
+    position: 56,
+  },
+  {
+    name: "Account & Finance",
+    icon: Building2,
+    position: 26,
+  },
+  {
+    name: "Health & Care",
+    icon: BriefcaseMedical,
+    position: 4,
+  },
+  {
+    name: "Data & Science",
+    icon: Database,
+    position: 78,
+  },
+];
+
+export const openings = [
+  {
+    position: "IT Development Head-GM/AGM",
+    experience: "12+ Year's",
+    vacancy: 1,
+    location: "Gurgaon Corporate-Udyog Vihar ph4",
+    role: "Full Time",
+  },
+  {
+    position: "Jr. Developer",
+    experience: "2-5 Year's",
+    vacancy: 3,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "Sr. Developer",
+    experience: "4-7 Year's",
+    vacancy: 1,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "Web Developer",
+    experience: "4-7 Year's",
+    vacancy: 1,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "Desktop Support H & N",
+    experience: "2-5 Year's",
+    vacancy: 1,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "BA-Documentation / Training",
+    experience: "4-7 Year's",
+    vacancy: 1,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "SR. Manager (Female) - Sales & Operations",
+    experience: "5-12 Year's",
+    vacancy: 2,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "Corporate Trainer",
+    experience: "4-8 Year's",
+    vacancy: 2,
+    location: "GGCO",
+    role: "Full Time",
+  },
+  {
+    position: "Territory Head",
+    experience: "10 to 15 Year's in Logistics",
+    vacancy: 1,
+    location: "Chennai",
+    role: "Full Time",
+  },
+  {
+    position: "Key Account Manager",
+    experience: "3-7 Year's in logistics",
+    vacancy: 1,
+    location: "Kandivili (MBY)",
+    role: "Full Time",
+  },
+  {
+    position: "Key Account Manager",
+    experience: "3-7 Year's in logistics",
+    vacancy: 1,
+    location: "JNPT (MBY)",
+    role: "Full Time",
   },
 ];
