@@ -3,14 +3,43 @@ import {
   BriefcaseBusiness,
   Building2,
   Calendar,
+  ChevronLeft,
+  ChevronRight,
   MapPin,
   Search,
   UsersRound,
 } from "lucide-react";
 import animationData from "../assets/job-animation.json";
 import { careerCategories, openings } from "../constants";
+import { useCallback, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../utils/motion";
+import { useMediaQuery } from "react-responsive";
+import AnimationWrapper from "../components/AnimationWrapper";
+import { useJobApplyStore } from "../stores";
+import CareerModal from "../components/modals/CareerModal";
 
 const Career = () => {
+  const mobile = useMediaQuery({ query: "(min-width: 640px)" });
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(openings.length / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { onOpen: openModal, setJob } = useJobApplyStore();
+
+  const currentItems = openings.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const goToNextPage = useCallback(
+    () => setCurrentPage((prev) => Math.min(prev + 1, totalPages)),
+    [totalPages]
+  );
+  const goToPreviousPage = useCallback(
+    () => setCurrentPage((prev) => Math.max(prev - 1, 1)),
+    []
+  );
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -19,11 +48,27 @@ const Career = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  const handleOpenModal = (job) => {
+    setJob(job);
+    openModal();
+  };
+
+  const pageButton =
+    "w-10 h-10 rounded-md border border-neutral-300 flex items-center justify-center";
+
   return (
     <>
+      <CareerModal />
       <section className="py-20 bg-foreground">
-        <div className="wrapper grid md:grid-cols-2 gap-6 items-center">
-          <div>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper grid md:grid-cols-2 gap-6 items-center"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
             <h1 className="lg:text-5xl sm:text-4xl text-3xl leading-tight font-semibold">
               Find a job that suits your interest and skills.
             </h1>
@@ -60,68 +105,94 @@ const Career = () => {
                 Find Job
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="w-full h-auto">
+          <motion.div
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            className="w-full h-auto"
+          >
             <Lottie options={defaultOptions} width={300} height={300} />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="wrapper pt-20 grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
-          <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
-            <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
-              <BriefcaseBusiness />
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <motion.div
+            variants={
+              mobile
+                ? fadeIn("up", "tween", 0.2, 1)
+                : fadeIn("right", "tween", 0.2, 1)
+            }
+            className="wrapper pt-20 grid lg:grid-cols-4 sm:grid-cols-2 gap-6"
+          >
+            <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
+              <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
+                <BriefcaseBusiness />
+              </div>
+              <div className="flex-1 space-y-1">
+                <h2 className="text-lg font-semibold group-hover:text-primary">
+                  1234
+                </h2>
+                <p className="text-sm opacity-60">Live job</p>
+              </div>
             </div>
-            <div className="flex-1 space-y-1">
-              <h2 className="text-lg font-semibold group-hover:text-primary">
-                1234
-              </h2>
-              <p className="text-sm opacity-60">Live job</p>
-            </div>
-          </div>
 
-          <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
-            <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
-              <Building2 />
+            <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
+              <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
+                <Building2 />
+              </div>
+              <div className="flex-1 space-y-1">
+                <h2 className="text-lg font-semibold group-hover:text-primary">
+                  12,334
+                </h2>
+                <p className="text-sm opacity-60">Companies</p>
+              </div>
             </div>
-            <div className="flex-1 space-y-1">
-              <h2 className="text-lg font-semibold group-hover:text-primary">
-                12,334
-              </h2>
-              <p className="text-sm opacity-60">Companies</p>
+            <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
+              <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
+                <UsersRound />
+              </div>
+              <div className="flex-1 space-y-1">
+                <h2 className="text-lg font-semibold group-hover:text-primary">
+                  38,345
+                </h2>
+                <p className="text-sm opacity-60">Customers</p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
-            <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
-              <UsersRound />
+            <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
+              <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
+                <BriefcaseBusiness />
+              </div>
+              <div className="flex-1 space-y-1">
+                <h2 className="text-lg font-semibold group-hover:text-primary">
+                  334
+                </h2>
+                <p className="text-sm opacity-60">New Hobs</p>
+              </div>
             </div>
-            <div className="flex-1 space-y-1">
-              <h2 className="text-lg font-semibold group-hover:text-primary">
-                38,345
-              </h2>
-              <p className="text-sm opacity-60">Customers</p>
-            </div>
-          </div>
-          <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
-            <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
-              <BriefcaseBusiness />
-            </div>
-            <div className="flex-1 space-y-1">
-              <h2 className="text-lg font-semibold group-hover:text-primary">
-                334
-              </h2>
-              <p className="text-sm opacity-60">New Hobs</p>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <section className="py-20">
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="py-20"
+      >
         <div className="wrapper">
           <h1 className="text-xl font-bold opacity-90 mb-6">
             Popular Categories
           </h1>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+          <motion.div
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
+          >
             {careerCategories.map((category, index) => (
               <div
                 key={index}
@@ -140,16 +211,22 @@ const Career = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <section className="py-20">
         <div className="wrapper">
           <h1 className="text-xl font-bold opacity-90 mb-6">Featured Job</h1>
-          <div className="flex flex-col gap-4">
-            {openings.map((opening, index) => (
-              <div
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className="flex flex-col gap-4"
+          >
+            {currentItems.map((opening, index) => (
+              <AnimationWrapper
                 key={index}
                 className="flex sm:flex-row flex-col sm:items-center  border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow hover:border-primary "
               >
@@ -177,11 +254,47 @@ const Career = () => {
                     </div>
                   </div>
                   <div>
-                    <button className="btn primary-btn">Apply now</button>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenModal(opening)}
+                      className="btn primary-btn"
+                    >
+                      Apply now
+                    </button>
                   </div>
                 </div>
-              </div>
+              </AnimationWrapper>
             ))}
+          </motion.div>
+
+          <div className="flex items-center gap-1 mt-10 justify-center">
+            <button
+              type="button"
+              disabled={currentPage === 1}
+              onClick={goToPreviousPage}
+              className={`${pageButton} disabled:bg-foreground`}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                className={`btn ${
+                  page === currentPage ? "primary-btn" : "btn secondary-btn"
+                }`}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              type="button"
+              disabled={currentPage === totalPages}
+              onClick={goToNextPage}
+              className={`${pageButton} disabled:bg-foreground`}
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
         </div>
       </section>
