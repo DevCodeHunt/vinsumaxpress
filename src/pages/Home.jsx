@@ -44,7 +44,7 @@ const Hero = ({ tablet }) => {
           }
         >
           <h1 className="md:text-5xl sm:text-4xl text-3xl md:leading-snug leading-tight">
-            A Revolutionary and Steadfast Solution for th
+            A Revolutionary and Steadfast Solution for the
             <br className="md:block hidden" />{" "}
             <span className="opacity-40">Global Supply Chain</span>
           </h1>
@@ -466,13 +466,13 @@ const Home = () => {
   const [showSplash, setShowSplash] = useState(false);
 
   useEffect(() => {
-    const splashShown = sessionStorage.getItem("splashShown");
+    const splashShown = localStorage.getItem("splashShown");
 
     if (!splashShown) {
       setShowSplash(true); // Show splash screen if it's not shown before
       const timer = setTimeout(() => {
         setShowSplash(false); // Hide splash screen after 5 seconds
-        sessionStorage.setItem("splashShown", "true");
+        localStorage.setItem("splashShown", "true");
       }, 2000);
 
       return () => clearTimeout(timer); // Cleanup the timer on component unmount
@@ -646,7 +646,7 @@ const Home = () => {
               >
                 <h3 className="text-lg">Direct Network Integration</h3>
                 <p className="text-sm">
-                  The only platform where you can gp live
+                  The only platform where you can go live
                 </p>
                 <button className="btn border-2 border-white mt-3">
                   Learn more
@@ -673,7 +673,7 @@ const Home = () => {
               >
                 <h3 className="text-lg">Scalable Card Platform</h3>
                 <p className="text-sm">
-                  The only platform where you can gp live
+                  The only platform where you can go live
                 </p>
                 <button className="btn border-2 border-white mt-3">
                   Learn more
