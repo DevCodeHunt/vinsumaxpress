@@ -4,8 +4,6 @@ import {
   Code,
   Database,
   Megaphone,
-  MonitorPlay,
-  Music,
   PenTool,
 } from "lucide-react";
 
@@ -292,60 +290,94 @@ export const social = {
   youtube: "www.youtube.com/@vinsumaxpressindiapvtltd.8044",
 };
 
+export const careerCategories = [
+  {
+    name: "Graphics & Design",
+    icon: PenTool,
+    position: 0,
+  },
+  {
+    name: "IT & Programming",
+    icon: Code,
+    position: 8,
+  },
+  {
+    name: "Digital Marketing",
+    icon: Megaphone,
+    position: 0,
+  },
+  {
+    name: "Account & Finance",
+    icon: Building2,
+    position: 3,
+  },
+  {
+    name: "Management",
+    icon: BriefcaseMedical,
+    position: 1,
+  },
+  {
+    name: "Sales & Operations",
+    icon: Database,
+    position: 2,
+  },
+];
+
 export const cardData = [
   {
-    title: "Premium Cards",
+    title: "Multimodal Transportation",
     description:
-      "Provides a simple and convenient interface for you to bill customers",
-    price: "$90",
-    priceLabel: "Per Active USER/Month",
+      "Multimodal transport can ease the journey by optimizing routes and using the most efficient modes for each leg of the journey.",
+    price: "Air, Road, Rail",
+    priceLabel: "650+ dedicated fleet — Air Plus & Air Premium",
     features: [
-      "Dedicated bank 1 accounts",
-      "Visa Credit and Debit cards",
-      "Automated notifications",
-      "Advanced card controls and spend policies",
-      "Carbon emissions tracking on card spend",
+      "Time sensitive express deliveries",
+      "Broad geographical reach",
+      "Cost effective routing of cargoes",
+      "Intelligent tracking and tracing (Road, Rail & air)",
+      "Intelligent alerts of shipment status",
     ],
   },
   {
-    title: "All-In-One Spend",
-    description: "Scale up your business by automating your payouts",
-    price: "$39",
-    priceLabel: "Per Active USER/Month",
+    title: "Warehouse Solution",
+    description:
+      "We are offering wide range of services including consolidation & packaging of cargoes of various types & sizes",
+    price: "Stock & Inventry Management",
+    priceLabel: "20,00,000+ sq.ft warehouse space",
     features: [
-      "Dedicated bank 1 accounts",
-      "Visa Credit and Debit cards",
-      "Automated notifications",
-      "Advanced card controls and spend policies",
-      "Carbon emissions tracking on card spend",
+      "53+ warehousing customers",
+      "Tailored solution as per the client needs",
+      "Customizable Warehouse management system",
+      "Kitting/De-Kitting services",
+      "Material security & safety",
     ],
   },
   {
-    title: "Enterprise",
+    title: "Packaging Solutions",
     description:
-      "Enable recurring payments with e-wallets, credit cards and direct debit",
-    price: "$69",
-    priceLabel: "Per Active USER/Month",
+      "Dedicated solution design team that can design solutions based on inputs provided by the customer about the component / part and produce feasibility reports for all your packaging needs consultation.",
+    price: "Packaging Manufacturing Plant",
+    priceLabel: "50,000+ boxes per month",
     features: [
-      "Dedicated bank 1 accounts",
-      "Visa Credit and Debit cards",
-      "Automated notifications",
-      "Advanced card controls and spend policies",
-      "Carbon emissions tracking on card spend",
+      "OPEX/CAPEX Model",
+      "Eco – Friendly.",
+      "Improves inventory management",
+      "Freight cube efficiency",
+      "Metal Identification of Parts & products",
     ],
   },
   {
-    title: "Premium Cards",
+    title: "3LP & 4LP Management",
     description:
-      "Provides a simple and convenient interface for you to bill customers",
-    price: "$90",
-    priceLabel: "Per Active USER/Month",
+      "Our Services often extend beyond logistics to include value-added services related to the production or procurement of goods, such as services that integrate parts of the supply chain.",
+    price: "Inventory / Project Management",
+    priceLabel: "",
     features: [
-      "Dedicated bank 1 accounts",
-      "Visa Credit and Debit cards",
-      "Automated notifications",
-      "Advanced card controls and spend policies",
-      "Carbon emissions tracking on card spend",
+      "Distribution Management",
+      "Store / SPD / PG Warehouse Management",
+      "Picking/Packing & CKD/CBU pakaging",
+      "Assemble line operation",
+      "Inbound Store management",
     ],
   },
 ];
@@ -377,48 +409,7 @@ export const serviceData = [
   },
 ];
 
-export const careerCategories = [
-  {
-    name: "Graphics & Design",
-    icon: PenTool,
-    position: 32,
-  },
-  {
-    name: "Code & Programming",
-    icon: Code,
-    position: 45,
-  },
-  {
-    name: "Digital Marketing",
-    icon: Megaphone,
-    position: 34,
-  },
-  {
-    name: "Video & Animation",
-    icon: MonitorPlay,
-    position: 24,
-  },
-  {
-    name: "Music & Audio",
-    icon: Music,
-    position: 56,
-  },
-  {
-    name: "Account & Finance",
-    icon: Building2,
-    position: 26,
-  },
-  {
-    name: "Health & Care",
-    icon: BriefcaseMedical,
-    position: 4,
-  },
-  {
-    name: "Data & Science",
-    icon: Database,
-    position: 78,
-  },
-];
+
 
 export const openings = [
   {
@@ -639,5 +630,32 @@ export const missionVisonValues = [
       "Diversity, Integrity & Accountability - Ethical standards and liability towards work.",
       "Sustainable Solutions - Biodegradable Packaging such as PP Boxes, FLC's, Steel Trolleys etc.",
     ],
+  },
+];
+
+export const networks = [
+  {
+    name: "Owned Space",
+    total: "30M Sqft",
+  },
+  {
+    name: "Branches",
+    total: "75+",
+  },
+  {
+    name: "Warehouses",
+    total: "53+",
+  },
+  {
+    name: "Routes",
+    total: "30+",
+  },
+  {
+    name: "Serviceable PinCode",
+    total: "15000+",
+  },
+  {
+    name: "Regional Offices",
+    total: "7",
   },
 ];

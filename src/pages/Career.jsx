@@ -5,6 +5,7 @@ import {
   Calendar,
   ChevronLeft,
   ChevronRight,
+  Globe,
   MapPin,
   Search,
   UsersRound,
@@ -73,9 +74,9 @@ const Career = () => {
               Find a job that suits your interest and skills.
             </h1>
             <p className="my-2 opacity-60">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus
-              quae voluptas corrupti tempore eos est autem reiciendis accusamus
-              aspernatur quo.
+              We believe that our people are our greatest asset. We are
+              committed to fostering a collaborative and innovative work
+              environment where every team member can thrive.
             </p>
 
             <div className="mt-6  flex items-center bg-white shadow rounded-lg  px-1">
@@ -131,13 +132,13 @@ const Career = () => {
           >
             <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
               <div className="flex items-center justify-center rounded-lg w-14 h-14 bg-primary/20">
-                <BriefcaseBusiness />
+                <Globe />
               </div>
               <div className="flex-1 space-y-1">
                 <h2 className="text-lg font-semibold group-hover:text-primary">
-                  1234
+                  75+
                 </h2>
-                <p className="text-sm opacity-60">Live job</p>
+                <p className="text-sm opacity-60">Total Branches</p>
               </div>
             </div>
 
@@ -147,9 +148,9 @@ const Career = () => {
               </div>
               <div className="flex-1 space-y-1">
                 <h2 className="text-lg font-semibold group-hover:text-primary">
-                  12,334
+                  Gurgaon
                 </h2>
-                <p className="text-sm opacity-60">Companies</p>
+                <p className="text-sm opacity-60">Headquarters</p>
               </div>
             </div>
             <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
@@ -158,9 +159,9 @@ const Career = () => {
               </div>
               <div className="flex-1 space-y-1">
                 <h2 className="text-lg font-semibold group-hover:text-primary">
-                  38,345
+                  600+
                 </h2>
-                <p className="text-sm opacity-60">Customers</p>
+                <p className="text-sm opacity-60">Total Employees</p>
               </div>
             </div>
             <div className="flex items-center shadow border bg-white rounded-lg px-2 py-4 cursor-pointer group gap-4 transition duration-300 hover:drop-shadow-lg ">
@@ -169,9 +170,9 @@ const Career = () => {
               </div>
               <div className="flex-1 space-y-1">
                 <h2 className="text-lg font-semibold group-hover:text-primary">
-                  334
+                  15+
                 </h2>
-                <p className="text-sm opacity-60">New Hobs</p>
+                <p className="text-sm opacity-60">Job Openings</p>
               </div>
             </div>
           </motion.div>

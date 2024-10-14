@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
 import { Link } from "react-router-dom";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   fadeIn,
@@ -24,6 +24,7 @@ import {
 } from "../utils/motion";
 import AnimationWrapper from "../components/AnimationWrapper";
 import { useMediaQuery } from "react-responsive";
+import SplashScreen from "../components/SplashScreen";
 
 const Hero = ({ tablet }) => {
   return (
@@ -425,7 +426,7 @@ const Cards = () => {
         spaceBetween={20}
         slidesPerView={3}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         onSlideChange={onSlideChange}
@@ -462,8 +463,25 @@ const Cards = () => {
 const Home = () => {
   const isTabletScreen = useMediaQuery({ query: "(max-width: 768px)" });
   const isMobileScreen = useMediaQuery({ query: "(max-width: 576px)" });
+  const [showSplash, setShowSplash] = useState(false);
+
+  useEffect(() => {
+    const splashShown = sessionStorage.getItem("splashShown");
+
+    if (!splashShown) {
+      setShowSplash(true); // Show splash screen if it's not shown before
+      const timer = setTimeout(() => {
+        setShowSplash(false); // Hide splash screen after 5 seconds
+        sessionStorage.setItem("splashShown", "true");
+      }, 2000);
+
+      return () => clearTimeout(timer); // Cleanup the timer on component unmount
+    }
+  }, []);
+
   return (
     <>
+      {showSplash && <SplashScreen />}
       <Hero tablet={isTabletScreen} />
       <Clients />
       <section className="py-10  overflow-hidden min-h-screen">
@@ -587,163 +605,6 @@ const Home = () => {
             />
           </motion.div>
           <Cards />
-
-          {/* <motion.div
-            variants={fadeIn("up", "tween", 0.2, 1)}
-            className="grid lg:grid-cols-3 min-[576px]:grid-cols-2 gap-8 overflow-hidden"
-          >
-           
-            <motion.div
-              variants={slideIn("up", "tween", 0.2, 1)}
-              className="bg-white h-full rounded-lg p-6"
-            >
-              <h1 className="text-3xl">Premium Cards</h1>
-              <p className="my-2 text-sm text-neutral-500">
-                Provides a simple and convenient interface for you to bill
-                customers
-              </p>
-
-              <div className="my-4">
-                <p className="text-2xl font-bold leading-none">$90</p>
-                <small className="font-semibold text-xs">
-                  Per Active USER/Month
-                </small>
-              </div>
-
-              <button className="btn primary-btn w-full">
-                Get started free
-              </button>
-
-              <div className="mt-4 space-y-2">
-                <p className="text-sm text-neutral-600">Features</p>
-                <ul className="space-y-2">
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span className="flex-1">Dedicated bank 1 accounts</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span> Visa Credit and Debit cards</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Automated motifications</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Advanced card controls and spend policies</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Carbon emissions tracking on card spend</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-           
-
-            <motion.div
-              variants={slideIn("up", "tween", 0.3, 1.1)}
-              className="bg-white rounded-lg p-6 border-2 border-primary min-[576px]:scale-110 relative"
-            >
-              <div className="w-full py-3 text-sm absolute left-0 right-0 top-0 bg-primary text-white text-center">
-                MOST POPULAR ️‍🔥
-              </div>
-              <h1 className="text-3xl pt-10">All-In-One Spend</h1>
-              <p className="my-2 text-sm text-neutral-500">
-                Scale up your business by atomating your payouts
-              </p>
-
-              <div className="my-4">
-                <p className="text-2xl font-bold leading-none">$39</p>
-                <small className="font-semibold text-xs">
-                  Per Active USER/Month
-                </small>
-              </div>
-
-              <button className="btn primary-btn w-full">
-                Get started free
-              </button>
-
-              <div className="mt-4 space-y-2">
-                <p className="text-sm text-neutral-600">Features</p>
-                <ul className="space-y-2">
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span className="flex-1">Dedicated bank 1 accounts</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span> Visa Credit and Debit cards</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Automated motifications</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Advanced card controls and spend policies</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Carbon emissions tracking on card spend</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-           
-            <motion.div
-              variants={slideIn("down", "tween", 0.4, 1.2)}
-              className="bg-white h-full rounded-lg p-6"
-            >
-              <h1 className="text-3xl">Enterprise</h1>
-              <p className="my-2 text-sm text-neutral-500">
-                Enable recuring payments with e-wallets, credit cards and direct
-                debt
-              </p>
-
-              <div className="my-4">
-                <p className="text-2xl font-bold leading-none">$69</p>
-                <small className="font-semibold text-xs">
-                  Per Active USER/Month
-                </small>
-              </div>
-
-              <button className="btn primary-btn w-full">
-                Get started free
-              </button>
-
-              <div className="mt-4 space-y-2">
-                <p className="text-sm text-neutral-600">Features</p>
-                <ul className="space-y-2">
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span className="flex-1">Dedicated bank 1 accounts</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span> Visa Credit and Debit cards</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Automated motifications</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Advanced card controls and spend policies</span>
-                  </li>
-                  <li className="text-sm text-neutral-600 flex items-center gap-1">
-                    <Check size={16} />
-                    <span>Carbon emissions tracking on card spend</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-           
-          </motion.div> */}
         </motion.div>
       </section>
 

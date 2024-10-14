@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
-import { leadershipTeams, missionVisonValues } from "../constants";
+import { leadershipTeams, missionVisonValues, networks } from "../constants";
 import { ROUTES } from "../utils/routes";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Smile } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const About = () => {
   return (
     <>
       <section className="py-10">
-        <div className="wrapper grid md:grid-cols-2 gap-6">
-          <div className="">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper grid md:grid-cols-2 gap-6"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)} className="">
             <div className="bg-foreground rounded p-1 px-2 w-fit">
               Books for those curious about the world
             </div>
@@ -36,21 +44,36 @@ const About = () => {
             <a href="#mission-values" className="btn primary-btn mt-6 w-fit">
               Learn More <MoveRight size={18} />
             </a>
-          </div>
+          </motion.div>
 
-          <div></div>
-        </div>
+          <motion.div variants={fadeIn("left", "tween", 0.2, 1)}></motion.div>
+        </motion.div>
       </section>
 
       <section id="mission-values" className="py-20">
-        <div className="wrapper space-y-20">
-          <h1 className="text-3xl font-bold text-center">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper md:space-y-20 space-y-12"
+        >
+          <motion.h1
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="text-3xl font-bold text-center"
+          >
             Do you know that...
-          </h1>
+          </motion.h1>
 
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+          <motion.div
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="grid md:grid-cols-3 sm:grid-cols-2 gap-6"
+          >
             {missionVisonValues.map((obj, index) => (
-              <div key={index} className="p-4 rounded-lg bg-white border h-full hover:bg-foreground transition duration-300">
+              <div
+                key={index}
+                className="p-4 rounded-lg bg-white border h-full hover:bg-foreground transition duration-300"
+              >
                 <img
                   src={obj.image}
                   alt={obj.name}
@@ -67,19 +90,251 @@ const About = () => {
                 </ul>
               </div>
             ))}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="py-20 md:space-y-20 space-y-12"
+      >
+        <motion.h1
+          variants={fadeIn("up", "tween", 0.2, 1)}
+          className="text-3xl font-bold text-center"
+        >
+          Chairman & Managing Director
+        </motion.h1>
+
+        <div className="bg-foreground">
+          <div className="wrapper relative lg:py-8 pb-8  grid lg:grid-cols-2  my-4 mt-8">
+            <div className="w-full px-4 relative flex items-center justify-center flex-col py-32">
+              <div className="bg-[#DEDEDE] lg:h-[700px] w-1/2 absolute lg:right-0 -right-4 top-0 bottom-0 border-b-8 border-primary">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col w-full items-center justify-center">
+                  <p>Social Media Seriously</p>
+                  <p className="font-bold">Harm your Mental Health</p>
+                </div>
+              </div>
+
+              <div className="lg:hidden block z-10 relative">
+                <div className="w-20 h-10 bg-primary/30 -top-4 -z-1 absolute right-0"></div>
+                <h1 className="text-5xl font-bold font-lato z-10">About Me.</h1>
+              </div>
+
+              <div className=" flex flex-col gap-8 lg:p-4 lg:pt-0 pt-10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-16">
+                {/* <img src="/images/wave-2.png" alt="wave-2" className="absolute -top-28 -right-10" /> */}
+                <div className="h-[280px] w-[250px] border-8 border-white rounded relative">
+                  <div className="w-12 h-12 rounded flex items-center justify-center absolute -left-7 top-16 bg-[#EDEDED]">
+                    <Smile className="opacity-60" />
+                  </div>
+
+                  <div className="w-4 h-10 bg-primary absolute -right-6 -z-1 bottom-8"></div>
+                </div>
+
+                <div className="lg:flex hidden flex-col gap-4 pl-8">
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="bg-[#676767] text-white lg:w-10 lg:h-10 w-12 h-12 flex items-center justify-center text-xl cursor-pointer"
+                  >
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="bg-[#676767] text-white lg:w-10 lg:h-10 w-12 h-12 flex items-center justify-center text-xl cursor-pointer"
+                  >
+                    <i className="fa-brands fa-x-twitter"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="bg-[#676767] text-white lg:w-10 lg:h-10 w-12 h-12 flex items-center justify-center text-xl cursor-pointer"
+                  >
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full relative  flex flex-col justify-center p-4 px-8">
+              <div className="lg:block hidden absolute -left-20 top-20">
+                <div className="w-20 h-10 bg-primary/30 -top-4 -z-1 absolute right-0"></div>
+                <h1 className="text-5xl font-bold font-lato z-10">About Me.</h1>
+              </div>
+
+              <div className="relative lg:pt-40 pt-10">
+                <p className="text-2xl leading-relaxed relative before:content-[''] before:absolute before:lg:-left-16 before:-left-12 before:top-5 before:lg:w-14 before:w-10 before:h-[1px] before:bg-black">
+                  {" "}
+                  I really don&#39;t want to explain so much but if I wanted to
+                  explain myself. I would rather consiter on{" "}
+                  <strong>Tree Subject.</strong>
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-8 pt-8">
+                <div className="flex gap-4 items-start">
+                  <div className="w-3 h-3 bg-black mt-2"></div>
+                  <p className="flex-1">
+                    On behalf of our team, I take this opportunity to welcome
+                    you to Vinsum Axpress. I would like to thank all our
+                    customers for lending us continuous support, especially
+                    during our formative years. We at Vinsum Axpress, are
+                    committed in our vision to provide cost-effective transport
+                    solutions through surface services, warehouse management,
+                    international freight forwarding, express distribution
+                    services, 3pl/4pl, packaging and project management.
+                  </p>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="w-3 h-3 bg-black mt-2"></div>
+                  <p className="flex-1">
+                    As the preferred supplier for fortune 100 automobile
+                    companies and the first point of contact to increase the
+                    efficiency in India, we are proud of our reputation and will
+                    always strive to maintain it. With over 18 years of
+                    experience in the market and dealing with different
+                    verticals and projects, our constant commitment and value
+                    delivery has enabled us to earn the trust of our clients.
+                  </p>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="w-3 h-3 bg-black mt-2"></div>
+                  <p className="flex-1">
+                    We are enterprising, and we see ourselves at a different
+                    level in the next couple of years with regards to new
+                    products and services, more locations, and increased revenue
+                    figures.
+                  </p>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="w-3 h-3 bg-black mt-2"></div>
+                  <p className="flex-1">
+                    The inception of Vinsum Axpress was in year 2002. It emerged
+                    as a fast growing freight forwarding company, spreading its
+                    wings PAN INDIA to reach out and extend valuable support to
+                    its valued clientele with utmost sincerity and dedication.
+                  </p>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="w-3 h-3 bg-black mt-2"></div>
+                  <p className="flex-1">
+                    As Chairman & Managing Director of the company, I wish to
+                    reinforce our commitment to serve each and every customer
+                    with passion and pride. We ensure that customers enjoy our
+                    unmatched service offerings to their utmost satisfaction and
+                    delight.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:hidden flex flex-col py-20 mt-6 items-center justify-center bg-[#2E2E2E] text-white gap-6">
+              <div className="flex flex-col w-full items-center justify-center">
+                <p>Social Media Seriously</p>
+                <p className="font-bold">Harm your Mental Health</p>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="bg-[#676767] text-white w-12 h-12 flex items-center justify-center text-xl cursor-pointer"
+                >
+                  <i className="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  className="bg-[#676767] text-white w-12 h-12 flex items-center justify-center text-xl cursor-pointer"
+                >
+                  <i className="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  className="bg-[#676767] text-white w-12 h-12 flex items-center justify-center text-xl cursor-pointer"
+                >
+                  <i className="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+      </motion.section>
+
+      <section className="py-20">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper grid md:grid-cols-2 md:gap-6 gap-12"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
+            <h1 className="text-3xl font-bold">Vinsum Axpress Network</h1>
+            <p className="tetx-sm opacity-60 my-4">
+              Headquartered in Gurugram, a prominent area of the NCR, and
+              empowered with a powerful and integrated distribution chain
+              capability enabled by a massive network of numerous
+              distribution-hubs and branches across the country, we have grown
+              as a strong national logistics brand over the years.
+            </p>
+
+            <div className="grid sm:grid-cols-3 grid-cols-2 items-center gap-6 pt-8">
+              {networks.map((overview, index) => (
+                <div
+                  key={index}
+                  className="bg-foreground border-2 p-4 flex flex-col items-center justify-center border-white gap-2"
+                >
+                  <h3 className="text-lg font-bold  text-primary text-center">
+                    {overview.total}
+                  </h3>
+                  <p className="text-sm opacity-60 font-semibold text-center">
+                    {overview.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.img
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            src="/images/map.png"
+            alt="map"
+            className="w-full h-full object-contain ml-auto"
+          />
+        </motion.div>
       </section>
 
       <section className="py-20">
-        <div className="wrapper space-y-20">
-          <div className="flex flex-col items-center justify-center">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper space-y-20"
+        >
+          <motion.div
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="flex flex-col items-center justify-center"
+          >
             <h1 className="text-4xl uppercase font-bold">Leadership</h1>
             <p className="opacity-60 max-w-lg text-center mt-2">
               We&#39;re led by a team who constantly queations, tinkers, and
               challengers to unlock great creativity around every turn.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-4 md:grid-cols-3 min-[528px]:grid-cols-2 gap-10">
             {leadershipTeams.map((team, index) => (
@@ -116,13 +371,19 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="bg-foreground py-20">
-        <div className="wrapper grid md:grid-cols-2 gap-6">
-          <div>
-            <h1 className="text-3xl font-bold text-center">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper grid md:grid-cols-2 gap-6"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
+            <h1 className="text-3xl font-bold">
               Join Our Team Now
             </h1>
             <p className="opacity-60 mt-2 text-sm">
@@ -130,9 +391,9 @@ const About = () => {
               dolorem quasi maiores molestias quisquam dolore sint dignissimos
               voluptates magnam laborum.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex items-center md:justify-end gap-4">
+          <motion.div variants={fadeIn("left", "tween", 0.2, 1)}  className="flex items-center md:justify-end gap-4">
             <Link
               to={ROUTES.CAREER}
               className="btn border hover:bg-primary hover:text-white transition duration-300"
@@ -144,12 +405,11 @@ const About = () => {
               Get Started
               <MoveRight size={18} />
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </>
   );
 };
-
 
 export default About;

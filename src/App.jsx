@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ROUTES } from "./utils/routes";
 import { Toaster } from "react-hot-toast";
-import SplashScreen from "./components/SplashScreen";
+import ScrollToTop from "./components/ScrollToTop";
+import ChatBot from "./components/ChatBot";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -17,8 +18,9 @@ const Career = lazy(() => import("./pages/Career"));
 export default function App() {
   return (
     <main>
-      
-      <Suspense fallback={<SplashScreen />}>
+      <ChatBot />
+
+      <Suspense fallback={<div></div>}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,6 +33,7 @@ export default function App() {
         </Routes>
         <Footer />
       </Suspense>
+      <ScrollToTop />
       <Toaster
         toastOptions={{
           duration: 3000,
