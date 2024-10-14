@@ -257,29 +257,30 @@ export const clients = [
 
 export const faqs = [
   {
-    question: "What is Payooble Financial exactly",
+    question: "What services do you offer?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+      "We provide freight transportation, warehousing, customs brokerage, and supply chain management. We operate nationwide/internationally, serving key logistics hubs and regional markets.",
   },
   {
-    question: "How will I save money by using Payooble",
+    question: "How do I track my shipment?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+      "You can track your shipment using our online tracking tool with your tracking number. Our customer service is also availabe 24/7 for any concerns.",
   },
   {
-    question: "Who is Payooble for?",
+    question: "How do I request a quote?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+      "You can request a quote through our website or by contacting our customer service team directly.",
   },
   {
-    question: "Does payooble integrate with accounting systems?",
+    question: "How do you ensure the safety of my shipment?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+      "We implement strict safety protocols and provide real-time monitoring throughout the transportation process.",
   },
   {
-    question: "How much does it cost?",
+    question:
+      "Are there any additional fees for using your technology services?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
+      "No, our technology services are included in our overall pricing. There are no hidden fees for utilizing our tracking or management tools.",
   },
 ];
 
@@ -496,5 +497,147 @@ export const openings = [
     vacancy: 1,
     location: "JNPT (MBY)",
     role: "Full Time",
+  },
+];
+
+export const leadershipTeams = [
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/CMD.jpeg",
+    name: "Mr. Vinod Sharma",
+    position: "Chairman & Managing Director",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/team-4.jpg",
+    name: "Mrs. Kusum Sharma",
+    position: "Chair Person",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/Lalit%20Sharma.jpg",
+    name: "Mr. Lalit Sharma",
+    position: "Managing Director",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image:
+      "https://vinsumaxpress.com/assets/img/team/Amit-Sharma-Executive-director.jpg",
+    name: "Mr. Amit Sharma",
+    position: "Executive Director",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/Ankit%20Sharma.jpg",
+    name: "Mr. Ankit Sharma",
+    position: "Executive Director",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/tc_web.jpg",
+    name: "Mr. T.C Sharma",
+    position: "President",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/vimal.jpg",
+    name: "Mr. Vimal Sharma",
+    position: "Head Credit Control",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/BL%20SHarma.jpg",
+    name: "Mr. Babulal Sharma",
+    position: "Head - Audit & Cost Control",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/AK_web.jpg",
+    name: "Mr. Anil Rajput",
+    position: "Head Billing",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/Amitabha_IT-Head1.jpg",
+    name: "Amitabha Mohapatra",
+    position: "Head Information Technology(IT)",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/mohit-vashisht.jpg",
+    name: "Mr. Mohit Vashisht",
+    position: "Manager Packaging Manufacturing Plant",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/sudhir%20bansal.jpg",
+    name: "Mr. Sudhir Mohan Bansal",
+    position: "President",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+  {
+    image: "https://vinsumaxpress.com/assets/img/team/SUPRIYA_HR.jpg",
+    name: "Mrs. Supriya Dutt",
+    position: "HR HEAD",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+  },
+];
+
+export const missionVisonValues = [
+  {
+    name: "Mission",
+    image: "/images/mission.png",
+    lists: [
+      "Accomplish the desired goal within a defined timeframe.",
+      "Build and utilize an infrastructure equipped with the latest technology.",
+      "Employ trained manpower tailored to meet specific market requirements.",
+      "Ensure the infrastructure and workforce are customized to align with market demands.",
+    ],
+  },
+  {
+    name: "Vision",
+    image: "/images/vision.png",
+    lists: [
+      "Become a leading logistics services provider for Indian industries by leveraging the latest technology.",
+      "Create a win-win situation for all associates through competitive, cost-effective, safe, secure, and timely services.",
+      "Deliver error-free, high-quality services that meet stringent standards.",
+      "Gain recognition as a top expert in logistics and supply chain services.",
+      "Excel in customer service, providing top-notch experiences and solutions.",
+    ],
+  },
+  {
+    name: "Values",
+    image: "/images/hand-shake.png",
+    lists: [
+      "Service Excellence: Zero Productivity Loss In The Supply Chain Process.",
+      "Delivery Commitments - Economically Efficient And Time Bound Deliveries",
+      "Diversity, Integrity & Accountability - Ethical standards and liability towards work.",
+      "Sustainable Solutions - Biodegradable Packaging such as PP Boxes, FLC's, Steel Trolleys etc.",
+    ],
   },
 ];
