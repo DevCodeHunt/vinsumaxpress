@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { leadershipTeams, missionVisonValues } from "../constants";
 import { ROUTES } from "../utils/routes";
-import { MoveRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MoveRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css";
+import { useCallback, useRef } from "react";
 
 const About = () => {
   return (
@@ -50,7 +56,10 @@ const About = () => {
 
           <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
             {missionVisonValues.map((obj, index) => (
-              <div key={index} className="p-4 rounded-lg bg-white border h-full hover:bg-foreground transition duration-300">
+              <div
+                key={index}
+                className="p-4 rounded-lg bg-white border h-full hover:bg-foreground transition duration-300"
+              >
                 <img
                   src={obj.image}
                   alt={obj.name}
@@ -81,41 +90,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 min-[528px]:grid-cols-2 gap-10">
-            {leadershipTeams.map((team, index) => (
-              <div
-                key={index}
-                className="flex flex-col justify-center items-center border hover:border-0 hover:bg-foreground p-4 rounded-lg hover:drop-shadow transition duration-300 cursor-pointer"
-              >
-                <img
-                  src={team.image}
-                  alt={team.name}
-                  className="w-32 h-32 rounded-full object-cover"
-                />
-
-                <div className="mt-6 space-y-2">
-                  <h3 className="font-semibold text-center">{team.name}</h3>
-                  <p className="text-sm opacity-60 text-center">
-                    {team.position}
-                  </p>
-
-                  <div className="w-full flex items-center gap-4 justify-center pt-1">
-                    <a href={team.instagram} target="_blank" className="">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-
-                    <a href={team.twitter} target="_blank" className="">
-                      <i className="fa-brands fa-x-twitter"></i>
-                    </a>
-
-                    <a href={team.linkedin} target="_blank" className="">
-                      <i className="fa-brands fa-linkedin-in opacity-70"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Team />
         </div>
       </section>
 
@@ -148,6 +123,96 @@ const About = () => {
         </div>
       </section>
     </>
+  );
+};
+
+const Team = () => {
+  const swiperRef = useRef(null);
+  const breakpoints = {
+    0: {
+      slidesPerView: 1,
+    },
+    540: {
+      slidesPerView: 2,
+    },
+    968: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  };
+
+  const prevSlide = useCallback(() => {
+    swiperRef.current?.swiper.slidePrev();
+  }, []);
+
+  const nextSlide = useCallback(() => {
+    swiperRef.current?.swiper.slideNext();
+  }, []);
+  
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={prevSlide}
+        className="absolute top-1/2 sm:-left-4 -left-3 w-8 h-8 rounded-full flex items-center justify-center border z-10 bg-white hover:bg-primary hover:text-white transition duration-300"
+      >
+        <ChevronLeft size={18} />
+      </button>
+      <button
+        type="button"
+        onClick={nextSlide}
+        className="absolute top-1/2 sm:-right-4 -right-3 w-8 h-8 rounded-full flex items-center justify-center border z-10 bg-white hover:bg-primary hover:text-white transition duration-300"
+      >
+        <ChevronRight size={18} />
+      </button>
+      <Swiper
+        ref={swiperRef}
+        spaceBetween={20}
+        slidesPerView={4}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        fade={true}
+        modules={[Autoplay, Navigation]}
+        breakpoints={breakpoints}
+      >
+        {leadershipTeams.map((team, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex flex-col justify-center items-center border hover:border-0 hover:bg-foreground p-4 rounded-lg hover:drop-shadow transition duration-300 cursor-pointer">
+              <img
+                src={team.image}
+                alt={team.name}
+                className="w-32 h-32 rounded-full object-cover"
+              />
+
+              <div className="mt-6 space-y-2">
+                <h3 className="font-semibold text-center">{team.name}</h3>
+                <p className="text-sm opacity-60 text-center">
+                  {team.position}
+                </p>
+
+                <div className="w-full flex items-center gap-4 justify-center pt-1">
+                  <a href={team.instagram} target="_blank" className="">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+
+                  <a href={team.twitter} target="_blank" className="">
+                    <i className="fa-brands fa-x-twitter"></i>
+                  </a>
+
+                  <a href={team.linkedin} target="_blank" className="">
+                    <i className="fa-brands fa-linkedin-in opacity-70"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
