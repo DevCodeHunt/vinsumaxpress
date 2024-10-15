@@ -1,5 +1,11 @@
 const MediaCenter = () => {
-  return <div>MediaCenter</div>;
+  return (
+    <>
+      <section className="py-20">
+        <div className="wrapper">Media Center</div>
+      </section>
+    </>
+  );
 };
 
 export default MediaCenter;
