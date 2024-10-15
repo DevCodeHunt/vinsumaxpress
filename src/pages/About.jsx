@@ -55,7 +55,7 @@ const About = () => {
           </motion.div>
 
           <motion.div variants={fadeIn("left", "tween", 0.2, 1)}>
-            <img src="/images/about_us.png" alt="about" />
+            <img src="/images/about-us.png" alt="about" />
           </motion.div>
         </motion.div>
       </section>
