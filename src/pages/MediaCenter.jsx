@@ -1,8 +1,107 @@
+import { Field, Form, Formik } from "formik";
+import toast from "react-hot-toast";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../utils/motion";
+import { blogs } from "../constants";
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+
 const MediaCenter = () => {
+  const handleSubscribe = (values) => {
+    if (!values.email) {
+      toast.error("Email field is required");
+      return;
+    }
+    toast.success(`Thanks for susbcribing ${values.email}`);
+  };
   return (
     <>
       <section className="py-20">
-        <div className="wrapper">Media Center</div>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper grid md:grid-cols-2 md:items-center gap-6"
+        >
+          <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
+            <h1 className="sm:text-5xl text-3xl font-bold">Vinsum Blog</h1>
+            <Formik
+              initialValues={{
+                email: "",
+              }}
+              onSubmit={handleSubscribe}
+            >
+              {({ values, handleChange, handleSubmit }) => (
+                <Form
+                  onSubmit={handleSubmit}
+                  className="mt-6 relative rounded-full max-w-sm w-full border h-11"
+                >
+                  <Field
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                    required
+                    className="outline-none bg-transparent border-none h-full rounded-full pl-4 pr-[102px] text-sm"
+                  />
+                  <button
+                    type="submit"
+                    className="btn primary-btn !rounded-full absolute right-0 top-1/2 -translate-y-1/2"
+                  >
+                    Subscribe
+                  </button>
+                </Form>
+              )}
+            </Formik>
+          </motion.div>
+
+          <motion.p
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            className="md:ml-auto text-lg md:max-w-sm w-full"
+          >
+            New product features, the lastes in the technology, solutions, and
+            updates.
+          </motion.p>
+        </motion.div>
+      </section>
+
+      <section className="py-20">
+        <div className="wrapper">
+          <div className="flex md:flex-row flex-col">
+            {blogs.map((blog, index) => (
+              <div key={index} className="w-full h-[400px] relative">
+                <img
+                  src={blog.images[0]}
+                  alt={blog.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="w-full p-4 absolute bg-white/80 drop-shadow left-0 right-0 bottom-0">
+                  <Link
+                    to={`/blog/${blog.id}`}
+                    className="text-xl font-bold relative w-full cursor-pointer underline"
+                  >
+                    {blog.title}
+                  </Link>
+                  <p
+                    className="line-clamp-2 my-4 font-medium"
+                    dangerouslySetInnerHTML={{ __html: blog.description }}
+                    aria-label="Blog information content"
+                  ></p>
+
+                  <Link
+                    to={`/blog/${blog.id}`}
+                    className="flex items-center font-semibold gap-1 text-sm"
+                  >
+                    Read post <ArrowUpRight size={18} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );

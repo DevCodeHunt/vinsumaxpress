@@ -409,8 +409,6 @@ export const serviceData = [
   },
 ];
 
-
-
 export const openings = [
   {
     position: "IT Development Head-GM/AGM",
@@ -657,5 +655,34 @@ export const networks = [
   {
     name: "Regional Offices",
     total: "7",
+  },
+];
+
+export const blogs = [
+  {
+    id: 1,
+    title: "Champion of Supply Chain Management 2020",
+    images: [
+      "https://vinsumaxpress.com/assets/img/blog/ET_01.png",
+      "https://vinsumaxpress.com/assets/img/blog/ET_02.jpg",
+      "https://vinsumaxpress.com/assets/img/blog/ET_03.jpg",
+    ],
+    description:
+      'It is very pleasure and also a proud moment for us that The Economic Times has recognized our Company "VINSUM AXPRESS INDIA PVT LTD" as a Champion of Supply Chain Management 2020.',
+    author: "Vinsum Axpress",
+    cratedAt: "Jan 21, 2021",
+  },
+  {
+    id: 2,
+    title: "Champion of Supply Chain Management 2020",
+    images: [
+      "https://vinsumaxpress.com/assets/img/blog/road-freight-services.jpg",
+      "https://vinsumaxpress.com/assets/img/blog/ET_02.jpg",
+      "https://vinsumaxpress.com/assets/img/blog/ET_03.jpg",
+    ],
+    description:
+      "<p>Trucks come in various shapes and sizes that support different types of loads. All these trucks are specially designed to do a particular type of job. These trucks, based on their size and shape, make transportation of goods easier. Now, many people need assistance in finding the most appropriate truck for the type of cargo. In this article, we will explain to you what types of trucks are there and what types of loads they are capable of.</p><h1>Refrigerated truck</h1><p>These types of trucks have refrigeration facilities. Goods prone to destruction are transported by these trucks as they provide freezing service and everyone knows that cold prevents things from being destroyed. Milk, eggs, edibles, medicines etc. are transported through them. Typically, transportation is done overnight.</p><h1>Flatbeds</h1><p>What is a flatbed? Flatbed trucks have a cabin for the driver and the rest of the truck is open. These trucks are best for loading wood, pipes {concrete or plastic whatever}, and other things like that. They are long and open which makes easy loading and unloading. A single flatbed trailer can carry a maximum fare of 48,000 pounds which it can easily handle.</p><h1>Box Truck</h1><p>They are simple trucks also known as cube trucks. These trucks are small in size, well sealed. Typically, these trucks are used for home furniture, while families move from one place to another. These are generally in good demand as they require low license requirements and are usually easily controlled and managed.</p><h1>Liftgate Trucks</h1><p>Liftgates is a generic term used in American slang. In British English the British lift tail is used for the same. These have an installed rear end that collects goods from the ground level and then loads it into the truck. This reduces heavy lifting to a great extent and also facilitates better service. Up-lifters can be hydraulic, mechanic, etc. depending on the truck and technology.</p><h1>Semi-trailer truck</h1><p>Now, the semi-trailer type of trucks is also widely used. They have an open edge, roof, or rear that suits you to load freight. Their capacity is 24,000 kg. It is best for items that are stored in the stack.</p><h1>Jumbo trailer truck</h1><p>They are as beautiful as the ones mentioned above. These trailers have more capacity than semi-trailer trucks because they have a lower wheel diameter and a G-shaped floor that supports capacity. These trucks are best for capacitive accessories as these trucks are very spacious and lightweight. Like a semi-trailer truck, one can load from either side or top or rear wherever it seems convenient.</p><p>Therefore, all of these were commonly used trucks in the logistics sector. One can easily understand their way of working and they can carry with ability and other features and can easily decide what kind of goods the customer supports. One should wisely choose the type of truck they need as they are all different rates that affect the freight rates.</p><h1>List of truck types</h1><p>The purpose of this list of truck types is to classify trucks and provide links to articles on different types. The three main classifications for road trucks by weight are light trucks, medium trucks, and heavy trucks. On top of this, there are particularly very heavy trucks and transporters such as heavy hellers for oversized moves, and off-road heavy trucks and very large trucks used for mining and highway use without special permits.</p>",
+    author: "Vinsum Axpress",
+    cratedAt: "May 20, 2020",
   },
 ];

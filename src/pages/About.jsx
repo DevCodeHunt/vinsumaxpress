@@ -27,17 +27,25 @@ const About = () => {
               <p className="text-lg">Do you know that</p>
               <ul className="pl-4 list-disc mt-2 space-y-1">
                 <li className="">
-                  the oldest discovering dog remains are 32,000 years old?
-                </li>
-                <li>Flushing toilets have been around over 4,000 years?</li>
-                <li>The Persiants invented the freezer in 400 BC?</li>
-                <li>
-                  The Romans sometimes filled the Colosseum with water and
-                  recreated sea battels?
+                  we&#39;ve been the leading logistics company in India for the
+                  past 18 years.
                 </li>
                 <li>
-                  Did Nepoleon tell Europeans to drive on the right side of the
-                  road?
+                  {" "}
+                  with 75+ branches, and 53+ warehouses across India, we&#39;ve
+                  got you covered.
+                </li>
+                <li>
+                  {" "}
+                  integrity, accountability, excellence, and innovation is our
+                  mantra.
+                </li>
+                <li>
+                  with a portfolio of over 100+ happy clients, we strive to
+                  provide exceptional service and build lasting relationships.
+                </li>
+                <li>
+                  and we are hiring. Click the button below to join us 😉.
                 </li>
               </ul>
             </div>
@@ -52,7 +60,7 @@ const About = () => {
         </motion.div>
       </section>
 
-      <section  className="py-20">
+      <section className="py-20">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
