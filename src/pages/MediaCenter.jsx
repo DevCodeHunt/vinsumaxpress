@@ -113,6 +113,10 @@ const MediaCenter = () => {
           </div>
         </div>
       </section>
+
+      <section className="py-20">
+        <div className="wrapper"></div>
+      </section>
     </>
   );
 };

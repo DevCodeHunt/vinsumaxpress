@@ -89,9 +89,7 @@ const Hero = ({ tablet }) => {
             <div className="xl:block hidden w-[180px] h-[180px] rounded-full bg-neutral-50 opacity-30 absolute -left-10 top-10 -z-2"></div>
             <div className="xl:block hidden w-[220px] h-[220px] rounded-full bg-neutral-50 opacity-20 -z-2 absolute -left-40 bottom-4"></div>
             {/* Rectangle */}
-            <div className="xl:block hidden w-[230px] h-[230px] rounded-xl bg-neutral-50 opacity-25 absolute -right-24 bottom-20 -z-2 rotate-45">
-              
-            </div>
+            <div className="xl:block hidden w-[230px] h-[230px] rounded-xl bg-neutral-50 opacity-25 absolute -right-24 bottom-20 -z-2 rotate-45"></div>
 
             {/* Left Box */}
             <div className="xl:block hidden absolute top-28  h-[65%] bg-none border-2  rounded-xl w-[28.5rem] -left-16"></div>
@@ -114,17 +112,23 @@ const Hero = ({ tablet }) => {
             </div>
 
             <div className="xl:block hidden h-24 w-60 rounded-xl bg-white absolute -right-48 top-[4.5rem] z-10">
-            <img src="/gifs/aeroplane.gif" alt="aeroplane" className="w-full h-full object-cover rounded-xl" />
+              <img
+                src="/gifs/aeroplane.gif"
+                alt="aeroplane"
+                className="w-full h-full object-cover rounded-xl"
+              />
             </div>
 
             <div className="xl:block hidden w-60 h-28 rounded-xl bg-white absolute -right-48 bottom-16 z-10">
               <div className="w-4 h-4 rounded-full bg-white border border-primary shadow flex items-center justify-center absolute -top-2 left-1/2 -translate-x-1/2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
               </div>
-              <img src="/gifs/train.gif" alt="train" className="w-full h-full object-cover rounded-xl" />
-              <div className="xl:block hidden h-12 w-48 left-6 bg-foreground rounded-xl rotate-6 absolute -bottom-9">
-                
-              </div>
+              <img
+                src="/gifs/train.gif"
+                alt="train"
+                className="w-full h-full object-cover rounded-xl"
+              />
+              <div className="xl:block hidden h-12 w-48 left-6 bg-foreground rounded-xl rotate-6 absolute -bottom-9"></div>
             </div>
           </div>
         </motion.div>
@@ -504,7 +508,7 @@ const Home = () => {
 
   return (
     <>
-      {showSplash && <SplashScreen />}
+      {/* {showSplash && <SplashScreen />} */}
       <Hero tablet={isTabletScreen} />
       <Clients />
       <section className="py-10  overflow-hidden min-h-screen">
@@ -670,7 +674,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <section className="min-h-screen">
+      <section>
         <div className="flex md:flex-row flex-col">
           <motion.div
             variants={staggerContainer}
@@ -733,24 +737,35 @@ const Home = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className="bg-background text-white py-20"
+          className=" text-white py-20 min-h-screen relative"
         >
-          <motion.div
-            variants={fadeIn("up", "tween", 0.2, 1)}
-            className="wrapper space-y-6 flex flex-col items-center justify-center"
+          <video
+            muted
+            loop
+            autoPlay
+            title="Video Indroduction"
+            className="w-full h-full absolute inset-0 z-10 object-cover"
           >
-            <SectionHeader
-              title="Access Financial Technology With"
-              subTitle="Maxium Security Form Your Hands"
-            />
-            <p className="text-sm opacity-80">
-              Everything you need to build the credit, debit, or payooble
-              product you want
-            </p>
-            <button className="btn border-2 border-white">
-              Get Started Now <MoveRight size={18} />
-            </button>
-          </motion.div>
+            <source src="/videos/vinsum-about.mp4" type="video/mp4"></source>
+          </video>
+          <div className="absolute inset-0 bg-black/30 z-10  flex items-center justify-center">
+            <motion.div
+              variants={fadeIn("up", "tween", 0.2, 1)}
+              className="wrapper space-y-6 flex flex-col items-center justify-center "
+            >
+              <SectionHeader
+                title="Access Financial Technology With"
+                subTitle="Maxium Security Form Your Hands"
+              />
+              <p className="text-sm text-center">
+                Everything you need to build the credit, debit, or payooble
+                product you want
+              </p>
+              <Link to={ROUTES.SERVICES} className="btn border-2 border-white hover:bg-primary transition duration-300">
+                Get Started Now <MoveRight size={18} />
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
       </section>
     </>
