@@ -504,7 +504,7 @@ const Home = () => {
 
   return (
     <>
-      {/* {showSplash && <SplashScreen />} */}
+      {showSplash && <SplashScreen />}
       <Hero tablet={isTabletScreen} />
       <Clients />
       <section className="py-10  overflow-hidden min-h-screen">
