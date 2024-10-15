@@ -2,7 +2,7 @@ import { Field, Form, Formik } from "formik";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import { blogs } from "../constants";
+import { blogs, galleries } from "../constants";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
@@ -62,7 +62,7 @@ const MediaCenter = () => {
             variants={fadeIn("left", "tween", 0.2, 1)}
             className="md:ml-auto text-lg md:max-w-sm w-full"
           >
-            New product features, the lastes in the technology, solutions, and
+            New product features, the latest in the technology, solutions, and
             updates.
           </motion.p>
         </motion.div>
@@ -81,10 +81,10 @@ const MediaCenter = () => {
                   />
                   <div className="absolute inset-0 bg-background/20" />
                   <div className="w-full p-4 py-10 absolute backdrop-blur-sm bg-white/30 text-white  left-0 right-0 bottom-0">
-                  <div className="z-10">
-                    <h3 className="font-semibold">{blog.author}</h3>
-                    <p className="text-white font-medium">{blog.cratedAt}</p>
-                  </div>
+                    <div className="z-10">
+                      <h3 className="font-semibold">{blog.author}</h3>
+                      <p className="text-white font-medium">{blog.cratedAt}</p>
+                    </div>
                   </div>
                 </div>
 
@@ -115,7 +115,114 @@ const MediaCenter = () => {
       </section>
 
       <section className="py-20">
-        <div className="wrapper"></div>
+        <div className="wrapper">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* {galleries.map((image, index) => (
+              <div key={index} className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={image}
+                    alt={`Gallery image ${index + 1}`}
+                  />
+                </div>
+              </div>
+            ))} */}
+            <div className="grid gap-4">
+              {}
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            {/* <div className="grid gap-4">
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+                  alt=""
+                />
+              </div>
+            </div> */}
+            {/* <div className="grid gap-4">
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+                  alt=""
+                />
+              </div>
+            </div> */}
+            {/* <div className="grid gap-4">
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  className="h-auto max-w-full rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+                  alt=""
+                />
+              </div>
+            </div> */}
+          </div>
+        </div>
       </section>
     </>
   );
