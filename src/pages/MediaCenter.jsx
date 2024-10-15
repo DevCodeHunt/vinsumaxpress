@@ -62,7 +62,7 @@ const MediaCenter = () => {
             variants={fadeIn("left", "tween", 0.2, 1)}
             className="md:ml-auto text-lg md:max-w-sm w-full"
           >
-            New product features, the latest in the technology, solutions, and
+            New product features, the lastes in the technology, solutions, and
             updates.
           </motion.p>
         </motion.div>
@@ -129,7 +129,6 @@ const MediaCenter = () => {
               </div>
             ))} */}
             <div className="grid gap-4">
-              {}
               <div>
                 <img
                   className="h-auto max-w-full rounded-lg"
@@ -152,7 +151,7 @@ const MediaCenter = () => {
                 />
               </div>
             </div>
-            {/* <div className="grid gap-4">
+            <div className="grid gap-4">
               <div>
                 <img
                   className="h-auto max-w-full rounded-lg"
@@ -174,8 +173,8 @@ const MediaCenter = () => {
                   alt=""
                 />
               </div>
-            </div> */}
-            {/* <div className="grid gap-4">
+            </div>
+            <div className="grid gap-4">
               <div>
                 <img
                   className="h-auto max-w-full rounded-lg"
@@ -197,8 +196,8 @@ const MediaCenter = () => {
                   alt=""
                 />
               </div>
-            </div> */}
-            {/* <div className="grid gap-4">
+            </div>
+            <div className="grid gap-4">
               <div>
                 <img
                   className="h-auto max-w-full rounded-lg"
@@ -220,7 +219,7 @@ const MediaCenter = () => {
                   alt=""
                 />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
