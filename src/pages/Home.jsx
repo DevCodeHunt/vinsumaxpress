@@ -508,7 +508,7 @@ const Home = () => {
 
   return (
     <>
-      {/* {showSplash && <SplashScreen />} */}
+      {showSplash && <SplashScreen />}
       <Hero tablet={isTabletScreen} />
       <Clients />
       <section className="py-10  overflow-hidden min-h-screen">
@@ -675,62 +675,7 @@ const Home = () => {
       </section>
 
       <section>
-        <div className="flex md:flex-row flex-col">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
-            className="relative md:w-1/2 h-80"
-          >
-            <div className="absolute inset-0 z-10 p-6  bg-background/30 text-white flex items-end">
-              <motion.div
-                variants={fadeIn("right", "tween", 0.2, 1)}
-                className="flex flex-col justify-center items-start gap-2 "
-              >
-                <h3 className="text-lg">Direct Network Integration</h3>
-                <p className="text-sm">
-                  The only platform where you can go live
-                </p>
-                <button className="btn border-2 border-white mt-3">
-                  Learn more
-                </button>
-              </motion.div>
-            </div>
-            <img
-              src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=400"
-              alt="image"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
-            className="relative md:w-1/2 h-80"
-          >
-            <div className="absolute inset-0 z-10 p-6 bg-background/30 text-white flex items-end">
-              <motion.div
-                variants={fadeIn("right", "tween", 0.2, 1)}
-                className="flex flex-col justify-center items-start gap-2 "
-              >
-                <h3 className="text-lg">Scalable Card Platform</h3>
-                <p className="text-sm">
-                  The only platform where you can go live
-                </p>
-                <button className="btn border-2 border-white mt-3">
-                  Learn more
-                </button>
-              </motion.div>
-            </div>
-            <img
-              src="https://images.pexels.com/photos/1267697/pexels-photo-1267697.jpeg?auto=compress&cs=tinysrgb&w=400"
-              alt="image"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </div>
+        
 
         <motion.div
           variants={staggerContainer}
