@@ -114,10 +114,19 @@ const MediaCenter = () => {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="wrapper">
+      <section className="py-20 ">
+        <div
+         
+          className="wrapper space-y-12 "
+        >
+          <h1
+          
+            className="text-3xl font-bold text-center "
+          >
+            Our Gallery
+          </h1>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {/* {galleries.map((image, index) => (
+            {galleries.map((image, index) => (
               <div key={index} className="grid gap-4">
                 <div>
                   <img
@@ -127,8 +136,8 @@ const MediaCenter = () => {
                   />
                 </div>
               </div>
-            ))} */}
-            <div className="grid gap-4">
+            ))}
+            {/* <div className="grid gap-4">
               <div>
                 <img
                   className="h-auto max-w-full rounded-lg"
@@ -219,7 +228,7 @@ const MediaCenter = () => {
                   alt=""
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
