@@ -62,7 +62,7 @@ const MediaCenter = () => {
             variants={fadeIn("left", "tween", 0.2, 1)}
             className="md:ml-auto text-lg md:max-w-sm w-full"
           >
-            New product features, the lastes in the technology, solutions, and
+            New product features, the latest in the technology, solutions, and
             updates.
           </motion.p>
         </motion.div>
