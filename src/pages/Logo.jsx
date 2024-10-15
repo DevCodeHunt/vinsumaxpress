@@ -4,7 +4,7 @@ const Logo = () => {
       <img
         src="/images/logo.png"
         alt="logo"
-        className="w-9 h-9 object-contain"
+        className="w-8 h-8 object-contain"
       />
       <span className="text-2xl font-bold">VINSUM</span>
     </div>

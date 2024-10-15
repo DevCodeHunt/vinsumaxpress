@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -77,13 +78,42 @@ const Footer = () => {
                 <img
                   src="/images/logo.png"
                   alt="logo"
-                  className="w-9 h-9 object-contain"
+                  className="w-8 h-8 object-contain"
                 />
                 <span className="text-2xl font-bold">VINSUM</span>
               </div>
+              <p className="my-2 font-semibold">
+                Vinsum Axpress India Private Limited.
+              </p>
               <p className="text-sm opacity-70 mt-2 max-w-xs">
                 Moving You Forward: Delivering More Than Just Freight!
               </p>
+
+              <a
+                href="tel:1800-833-3513"
+                className="flex gap-2 items-center opacity-70 my-4"
+              >
+                <Phone size={20} />
+                1800-833-3513
+              </a>
+              <a
+                href="mailto:care@vinsumaxpress.com"
+                className="flex gap-2 items-center opacity-70 my-4"
+              >
+                <Mail size={20} />
+                care@vinsumaxpress.com
+              </a>
+
+              <div
+                href="mailto:care@vinsumaxpress.com"
+                className="flex gap-2  opacity-70 my-4"
+              >
+                <MapPin size={20} />
+                <span className="flex-1">
+                  404- Electronic City, Udyog Vihar, Phase IV, Sector 18,
+                  Gurugram, 122015.
+                </span>
+              </div>
             </div>
 
             <div>
