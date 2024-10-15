@@ -14,7 +14,7 @@ const Tools = lazy(() => import("./pages/Tools"));
 const MediaCenter = lazy(() => import("./pages/MediaCenter"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Career = lazy(() => import("./pages/Career"));
-const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail/BlogDetail"));
 
 export default function App() {
   return (

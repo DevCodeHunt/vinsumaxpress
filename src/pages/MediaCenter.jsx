@@ -72,13 +72,23 @@ const MediaCenter = () => {
         <div className="wrapper">
           <div className="flex md:flex-row flex-col">
             {blogs.map((blog, index) => (
-              <div key={index} className="w-full h-[400px] relative">
-                <img
-                  src={blog.images[0]}
-                  alt={blog.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="w-full p-4 absolute bg-white/80 drop-shadow left-0 right-0 bottom-0">
+              <div key={index} className="w-full  relative">
+                <div className="h-[400px] relative">
+                  <img
+                    src={blog.images[0]}
+                    alt={blog.title}
+                    className="w-full h-full  object-cover"
+                  />
+                  <div className="absolute inset-0 bg-background/20" />
+                  <div className="w-full p-4 py-10 absolute backdrop-blur-sm bg-white/30 text-white  left-0 right-0 bottom-0">
+                  <div className="z-10">
+                    <h3 className="font-semibold">{blog.author}</h3>
+                    <p className="text-white font-medium">{blog.cratedAt}</p>
+                  </div>
+                  </div>
+                </div>
+
+                <div className="p-4">
                   <Link
                     to={`/blog/${blog.id}`}
                     className="text-xl font-bold relative w-full cursor-pointer underline"
