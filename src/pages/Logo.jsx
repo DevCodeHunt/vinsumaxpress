@@ -6,7 +6,7 @@ const Logo = () => {
         alt="logo"
         className="w-9 h-9 object-contain"
       />
-      <span className="text-xl font-bold">VINSUM</span>
+      <span className="text-2xl font-bold">VINSUM</span>
     </div>
   );
 };

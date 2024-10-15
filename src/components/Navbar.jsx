@@ -11,9 +11,9 @@ const menus = [
   { label: "Home", path: ROUTES.HOME },
   { label: "About Us", path: ROUTES.ABOUT },
   { label: "Services", path: ROUTES.SERVICES },
-  { label: "Tools", path: ROUTES.TOOLS },
+  // { label: "Tools", path: ROUTES.TOOLS },
   { label: "Media Center", path: ROUTES.MEDIACENTER },
-  { label: "Contact", path: ROUTES.CONTACT },
+  { label: "Career", path: ROUTES.CAREER },
 ];
 
 const MenuLink = ({ label, path }) => {

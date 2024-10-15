@@ -43,10 +43,9 @@ const Footer = () => {
       >
         <div className="pb-8 border-b border-neutral-200 flex md:items-center md:flex-row flex-col md:gap-4 gap-8">
           <div className="md:w-1/2 w-full">
-            <h3 className="text-lg font-semibold">Lets Connected ️‍🔥</h3>
+            <h3 className="text-lg font-semibold">Let&#39;s Connect ️‍🔥</h3>
             <p className="max-w-lg text-sm opacity-70 mt-4\2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est cum
-              sint a atque velit nostrum repellendus
+              - Connecting Ideas, Creating Possibilities!
             </p>
           </div>
 
@@ -80,11 +79,10 @@ const Footer = () => {
                   alt="logo"
                   className="w-9 h-9 object-contain"
                 />
-                <span className="text-xl font-bold">VINSUM</span>
+                <span className="text-2xl font-bold">VINSUM</span>
               </div>
               <p className="text-sm opacity-70 mt-2 max-w-xs">
-                Payaooble processes payments, helps marketplaces simplify
-                payments, send payments and other financial facilities.
+                Moving You Forward: Delivering More Than Just Freight!
               </p>
             </div>
 
@@ -92,17 +90,17 @@ const Footer = () => {
               <h3 className="font-semibold">Menu</h3>
               <ul className="space-y-2 mt-2">
                 <li>
-                  <Link to="#" className={menuLink}>
+                  <Link to="/" className={menuLink}>
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className={menuLink}>
+                  <Link to={ROUTES.ABOUT} className={menuLink}>
                     About us
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className={menuLink}>
+                  <Link to={ROUTES.SERVICES} className={menuLink}>
                     Our Services
                   </Link>
                 </li>
@@ -112,7 +110,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className={menuLink}>
+                  <Link to={ROUTES.MEDIACENTER} className={menuLink}>
                     Blog
                   </Link>
                 </li>
@@ -133,7 +131,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className={menuLink}>
+                  <Link to={ROUTES.MEDIACENTER} className={menuLink}>
                     Blog
                   </Link>
                 </li>
@@ -143,7 +141,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={ROUTES.CAREER} className={menuLink}>
+                  <Link to="#" className={menuLink}>
                     Privacy
                   </Link>
                 </li>

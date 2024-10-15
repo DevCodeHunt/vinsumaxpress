@@ -25,6 +25,7 @@ import {
 import AnimationWrapper from "../components/AnimationWrapper";
 import { useMediaQuery } from "react-responsive";
 import SplashScreen from "../components/SplashScreen";
+import { ROUTES } from "../utils/routes";
 
 const Hero = ({ tablet }) => {
   return (
@@ -54,11 +55,13 @@ const Hero = ({ tablet }) => {
           </p>
 
           <div className="flex items-center gap-2">
-            <button className="btn primary-btn">
+            <Link to={ROUTES.SERVICES} className="btn primary-btn">
               Our Services
               <MoveRight />
-            </button>
-            <button className="btn secondary-btn">Contact us</button>
+            </Link>
+            <Link to={ROUTES.CONTACT} className="btn secondary-btn">
+              Contact us
+            </Link>
           </div>
         </motion.div>
 
@@ -86,7 +89,9 @@ const Hero = ({ tablet }) => {
             <div className="xl:block hidden w-[180px] h-[180px] rounded-full bg-neutral-50 opacity-30 absolute -left-10 top-10 -z-2"></div>
             <div className="xl:block hidden w-[220px] h-[220px] rounded-full bg-neutral-50 opacity-20 -z-2 absolute -left-40 bottom-4"></div>
             {/* Rectangle */}
-            <div className="xl:block hidden w-[230px] h-[230px] rounded-xl bg-neutral-50 opacity-25 absolute -right-24 bottom-20 -z-2 rotate-45"></div>
+            <div className="xl:block hidden w-[230px] h-[230px] rounded-xl bg-neutral-50 opacity-25 absolute -right-24 bottom-20 -z-2 rotate-45">
+              
+            </div>
 
             {/* Left Box */}
             <div className="xl:block hidden absolute top-28  h-[65%] bg-none border-2  rounded-xl w-[28.5rem] -left-16"></div>
@@ -94,16 +99,32 @@ const Hero = ({ tablet }) => {
               <div className="w-4 h-4 rounded-full bg-white shadow flex items-center border border-primary justify-center absolute -top-2 left-1/2 -translate-x-1/2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
               </div>
+              <video
+                muted
+                loop
+                autoPlay
+                title="Video Indroduction"
+                className="w-full absolute inset-0 z-10 h-full rounded-xl object-cover border-none overflow-hidden"
+              >
+                <source
+                  src="/videos/global_network.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
             </div>
 
-            <div className="xl:block hidden h-24 w-60 rounded-xl bg-white absolute -right-48 top-[4.5rem] z-10"></div>
+            <div className="xl:block hidden h-24 w-60 rounded-xl bg-white absolute -right-48 top-[4.5rem] z-10">
+            <img src="/gifs/aeroplane.gif" alt="aeroplane" className="w-full h-full object-cover rounded-xl" />
+            </div>
 
             <div className="xl:block hidden w-60 h-28 rounded-xl bg-white absolute -right-48 bottom-16 z-10">
               <div className="w-4 h-4 rounded-full bg-white border border-primary shadow flex items-center justify-center absolute -top-2 left-1/2 -translate-x-1/2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
               </div>
-
-              <div className="xl:block hidden h-12 w-48 left-6 bg-foreground rounded-xl rotate-6 absolute -bottom-9"></div>
+              <img src="/gifs/train.gif" alt="train" className="w-full h-full object-cover rounded-xl" />
+              <div className="xl:block hidden h-12 w-48 left-6 bg-foreground rounded-xl rotate-6 absolute -bottom-9">
+                
+              </div>
             </div>
           </div>
         </motion.div>
@@ -358,7 +379,9 @@ const Card = ({
         <small className="font-semibold text-xs">{priceLabel}</small>
       </div>
 
-      <button className="btn primary-btn w-full">Get started free</button>
+      <Link to={ROUTES.SERVICES} className="btn primary-btn w-full">
+        Learn more
+      </Link>
 
       <div className="mt-4 space-y-2">
         <p className="text-sm text-neutral-600">Features</p>
@@ -468,7 +491,7 @@ const Home = () => {
   useEffect(() => {
     const splashShown = localStorage.getItem("splashShown");
 
-    if (!splashShown) {
+    if (splashShown) {
       setShowSplash(true); // Show splash screen if it's not shown before
       const timer = setTimeout(() => {
         setShowSplash(false); // Hide splash screen after 5 seconds
@@ -481,7 +504,7 @@ const Home = () => {
 
   return (
     <>
-      {showSplash && <SplashScreen />}
+      {/* {showSplash && <SplashScreen />} */}
       <Hero tablet={isTabletScreen} />
       <Clients />
       <section className="py-10  overflow-hidden min-h-screen">
@@ -510,8 +533,14 @@ const Home = () => {
             >
               <motion.div
                 variants={roateVariant(0.5, 1, -19)}
-                className="w-full bg-white rounded-lg h-48"
-              ></motion.div>
+                className="w-full bg-white rounded-lg h-48 p-2"
+              >
+                <img
+                  src="/images/one_stop_solution.png"
+                  alt="one_stop_solution"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
                   Project Managment
@@ -538,8 +567,14 @@ const Home = () => {
             >
               <motion.div
                 variants={roateVariant(0.7, 1.2, -19)}
-                className="w-full bg-white rounded-lg h-48"
-              ></motion.div>
+                className="w-full bg-white rounded-lg h-48 p-2"
+              >
+                <img
+                  src="/images/product_management.png"
+                  alt="product_management"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
                   Product Managment
@@ -568,8 +603,14 @@ const Home = () => {
             >
               <motion.div
                 variants={roateVariant(0.9, 1.3, -19)}
-                className="w-full bg-white rounded-lg h-48"
-              ></motion.div>
+                className="w-full bg-white rounded-lg h-48 p-2"
+              >
+                <img
+                  src="/images/cost_effective.png"
+                  alt="cost_effective"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
               <div className="mt-8 pb-2">
                 <p className="p-1 rounded bg-[#D0D6DB] text-xs font-medium px-2 mb-2 w-fit">
                   Cost Managment
@@ -622,8 +663,7 @@ const Home = () => {
           >
             <h1 className="text-3xl text-center">FAQs</h1>
             <p className="text-sm text-gray-600 text-center max-w-sm">
-              Giving you the control, observability, and flexibility you need to
-              build your card program your way.
+              Questions on Your Mind? Let&#39;s Solve Them Together!
             </p>
           </motion.div>
           <Faqs />

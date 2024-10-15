@@ -18,10 +18,10 @@ const About = () => {
         >
           <motion.div variants={fadeIn("right", "tween", 0.2, 1)} className="">
             <div className="bg-foreground rounded p-1 px-2 w-fit">
-              Books for those curious about the world
+              “Delivering More Than Just Packages.”
             </div>
             <h1 className="lg:text-6xl sm:text-5xl text-3xl font-bold my-4">
-              An astonishing encyclopedia of historical curiosoties
+              An astonishing expedition of curiosities—one mile at a time.
             </h1>
             <div>
               <p className="text-lg">Do you know that</p>
@@ -41,16 +41,18 @@ const About = () => {
                 </li>
               </ul>
             </div>
-            <a href="#mission-values" className="btn primary-btn mt-6 w-fit">
-              Learn More <MoveRight size={18} />
-            </a>
+            <Link to={ROUTES.CAREER} className="btn primary-btn mt-6 w-fit">
+              We are hiring <MoveRight size={18} />
+            </Link>
           </motion.div>
 
-          <motion.div variants={fadeIn("left", "tween", 0.2, 1)}></motion.div>
+          <motion.div variants={fadeIn("left", "tween", 0.2, 1)}>
+            <img src="/images/about_us.png" alt="about" />
+          </motion.div>
         </motion.div>
       </section>
 
-      <section id="mission-values" className="py-20">
+      <section  className="py-20">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -111,10 +113,10 @@ const About = () => {
         <div className="bg-foreground">
           <div className="wrapper relative lg:py-8 pb-8  grid lg:grid-cols-2  my-4 mt-8">
             <div className="w-full px-4 relative flex items-center justify-center flex-col py-32">
-              <div className="bg-[#DEDEDE] lg:h-[700px] w-1/2 absolute lg:right-0 -right-4 top-0 bottom-0 border-b-8 border-primary">
+              <div className="bg-[#DEDEDE] lg:h-[530px] w-1/2 absolute lg:right-0 -right-4 top-0 bottom-0 border-b-8 border-primary">
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col w-full items-center justify-center">
-                  <p>Social Media Seriously</p>
-                  <p className="font-bold">Harm your Mental Health</p>
+                  <p>Mr. Vinod Sharma</p>
+                  <p className="font-bold">Chairman & Managing Director</p>
                 </div>
               </div>
 
@@ -129,6 +131,11 @@ const About = () => {
                   <div className="w-12 h-12 rounded flex items-center justify-center absolute -left-7 top-16 bg-[#EDEDED]">
                     <Smile className="opacity-60" />
                   </div>
+                  <img
+                    src="https://vinsumaxpress.com/assets/img/team/CMD.jpeg"
+                    alt="chairmain"
+                    className="w-full h-full object-cover"
+                  />
 
                   <div className="w-4 h-10 bg-primary absolute -right-6 -z-1 bottom-8"></div>
                 </div>
@@ -169,10 +176,9 @@ const About = () => {
 
               <div className="relative lg:pt-40 pt-10">
                 <p className="text-2xl leading-relaxed relative before:content-[''] before:absolute before:lg:-left-16 before:-left-12 before:top-5 before:lg:w-14 before:w-10 before:h-[1px] before:bg-black">
-                  {" "}
-                  I really don&#39;t want to explain so much but if I wanted to
-                  explain myself. I would rather consiter on{" "}
-                  <strong>Tree Subject.</strong>
+                  Join us on an extraordinary journey of growth, where we strive
+                  for excellence and work together to achieve the best for
+                  <strong> our business.</strong>
                 </p>
               </div>
 
@@ -201,37 +207,6 @@ const About = () => {
                     experience in the market and dealing with different
                     verticals and projects, our constant commitment and value
                     delivery has enabled us to earn the trust of our clients.
-                  </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                  <div className="w-3 h-3 bg-black mt-2"></div>
-                  <p className="flex-1">
-                    We are enterprising, and we see ourselves at a different
-                    level in the next couple of years with regards to new
-                    products and services, more locations, and increased revenue
-                    figures.
-                  </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                  <div className="w-3 h-3 bg-black mt-2"></div>
-                  <p className="flex-1">
-                    The inception of Vinsum Axpress was in year 2002. It emerged
-                    as a fast growing freight forwarding company, spreading its
-                    wings PAN INDIA to reach out and extend valuable support to
-                    its valued clientele with utmost sincerity and dedication.
-                  </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                  <div className="w-3 h-3 bg-black mt-2"></div>
-                  <p className="flex-1">
-                    As Chairman & Managing Director of the company, I wish to
-                    reinforce our commitment to serve each and every customer
-                    with passion and pride. We ensure that customers enjoy our
-                    unmatched service offerings to their utmost satisfaction and
-                    delight.
                   </p>
                 </div>
               </div>
@@ -383,9 +358,7 @@ const About = () => {
           className="wrapper grid md:grid-cols-2 gap-6"
         >
           <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
-            <h1 className="text-3xl font-bold">
-              Join Our Team Now
-            </h1>
+            <h1 className="text-3xl font-bold">Join Our Team Now</h1>
             <p className="opacity-60 mt-2 text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
               dolorem quasi maiores molestias quisquam dolore sint dignissimos
@@ -393,7 +366,10 @@ const About = () => {
             </p>
           </motion.div>
 
-          <motion.div variants={fadeIn("left", "tween", 0.2, 1)}  className="flex items-center md:justify-end gap-4">
+          <motion.div
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            className="flex items-center md:justify-end gap-4"
+          >
             <Link
               to={ROUTES.CAREER}
               className="btn border hover:bg-primary hover:text-white transition duration-300"
