@@ -114,11 +114,11 @@ const Career = () => {
             className="bg-white drop-shadow-xl shadow-xl h-full rounded-2xl"
           >
             {/* Yo jo image tag hai vo use krna hai bba dmai ya line ata dena ok */}
-            {/* <img
-              src="/images/write her your name of image"
-              alt="your image nam"
+            <img
+              src="https://vinsumaxpress.com/assets/img/gallery/new-vinsum-axpress-images12.jpg"
+              alt="career image"
               className="w-full h-full rounded-2xl object-cover"
-            /> */}
+            />
             {/* <Lottie options={defaultOptions} width={300} height={300} />  */} 
           </motion.div>
         </motion.div>

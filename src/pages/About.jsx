@@ -57,7 +57,12 @@ const About = () => {
           </motion.div>
 
           <motion.div variants={fadeIn("left", "tween", 0.2, 1)} className="bg-white drop-shadow-xl shadow-xl rounded-2xl">
-            {/* <img src="/images/about-us.png" alt="about" classname="w-full h-full rounded-2xl" /> */}
+             <img
+              src="https://vinsumaxpress.com/assets/img/gallery/vinsum-axpress-warehouse-image-31.jpg"
+              alt="about image"
+              className="w-full h-[50%] rounded-t-2xl"
+            />
+            
           </motion.div>
         </motion.div>
       </section>
