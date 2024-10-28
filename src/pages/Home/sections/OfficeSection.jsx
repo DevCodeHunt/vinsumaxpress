@@ -78,7 +78,7 @@ const Clients = () => {
             <SwiperSlide key={index} className="py-4">
                 <div class="flex overflow-y-hidden overflow-x-scroll border-1 p-4 bg-gray-50">
                   <img src={client.logo} alt={client.name}
-                          class="h-16 w-full"
+                          className="h-16 w-full"
                         />
                   </div>
             </SwiperSlide>

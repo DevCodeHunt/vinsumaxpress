@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import toast from "react-hot-toast";
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import { companyDetail } from "../constants";
+import { companyDetail, faqs } from "../constants";
 import AnimationWrapper from "../components/AnimationWrapper";
+import {  ChevronDown, ChevronUp} from "lucide-react";
 
 const initialValues = {
   fullName: "",
@@ -56,7 +57,7 @@ const Contact = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="py-20"
+        className="py-16"
       >
         <motion.div
           variants={fadeIn("right", "tween", 0.2, 1)}
@@ -72,7 +73,7 @@ const Contact = () => {
         </motion.div>
       </motion.section>
 
-      <section className="py-10">
+      <section className="py-3">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -213,7 +214,58 @@ const Contact = () => {
           </motion.div>
         </motion.div>
       </section>
+
+      <motion.div
+             variants={fadeIn("right", "tween", 0.2, 1)}
+             className="flex flex-col items-center justify-center gap-3 mt-16"
+           >
+             <h1 className="text-3xl text-center">FAQs</h1>
+             <p className="text-sm text-gray-600 text-center max-w-sm">
+               Questions on Your Mind? Let&#39;s Solve Them Together!
+             </p>
+           </motion.div>
+      <Faqs />
     </AnimationWrapper>
+  );
+};
+
+
+const Faqs = () => {
+  const [active, setActive] = useState(null);
+
+  const handleActive = useCallback(
+    (index) => setActive((prevActive) => (prevActive === index ? null : index)),
+    []
+  );
+  return (
+    <motion.div
+      variants={fadeIn("up", "tween", 0.2, 1)}
+      className="max-w-xl mx-auto  w-full flex flex-col gap-6 mb-16 mt-10"
+    >
+      {faqs.map((faq, index) => {
+        const isActive = active === index;
+        return (
+          <AnimationWrapper
+            transition={{ duration: 1, delay: index * 0.2 }}
+            onClick={() => handleActive(index)}
+            key={index}
+            className="border rounded-lg p-4 space-y-4 transition-all duration-1000"
+          >
+            <div className="flex items-center justify-between cursor-pointer">
+              <p className={isActive && "font-semibold"}>{faq.question}</p>
+              <button>
+                {isActive ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+              </button>
+            </div>
+            <div
+              className={`text-sm opacity-70 ${isActive ? "block" : "hidden"}`}
+            >
+              {faq.answer}
+            </div>
+          </AnimationWrapper>
+        );
+      })}
+    </motion.div>
   );
 };
 
