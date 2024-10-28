@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { leadershipTeams, missionVisonValues, networks } from "../constants";
 import { ROUTES } from "../utils/routes";
-import { MoveRight, Smile } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import AnimationWrapper from "../components/AnimationWrapper";
@@ -94,9 +94,9 @@ const About = () => {
                 <img
                   src={obj.image}
                   alt={obj.name}
-                  className="w-32 object-cover"
+                  className="w-16 object-cover"
                 />
-                <h1 className="pt-6 text-2xl font-bold">{obj.name}</h1>
+                <h1 className="pt-6 text-2xl font-bold text-primary">{obj.name}</h1>
 
                 <ul className="space-y-2 pt-4 pl-2 list-disc">
                   {obj.lists.map((list, idx) => (
@@ -149,9 +149,9 @@ const About = () => {
               <div className=" flex flex-col gap-8 lg:p-4 lg:pt-0 pt-10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-16">
                 {/* <img src="/images/wave-2.png" alt="wave-2" className="absolute -top-28 -right-10" /> */}
                 <div className="h-[280px] w-[250px] border-8 border-white rounded relative">
-                  <div className="w-12 h-12 rounded flex items-center justify-center absolute -left-7 top-16 bg-[#EDEDED]">
+                  {/* <div className="w-12 h-12 rounded flex items-center justify-center absolute -left-7 top-16 bg-[#EDEDED]">
                     <Smile className="opacity-60" />
-                  </div>
+                  </div> */}
                   <img
                     src="https://vinsumaxpress.com/assets/img/team/CMD.jpeg"
                     alt="chairmain"
