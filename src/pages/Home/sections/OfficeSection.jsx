@@ -8,15 +8,16 @@ const OfficeSection = () => {
       <Card hasBg>
         <motion.div
           variants={fadeIn("right", "tween", 0.2, 1)}
-          className="space-y-3 max-w-xl"
+          className="space-y-3"
         >
-          <h1 className="card-title">
-            <span className="text-primary">OUR OFFICES</span> ARE SPREAD
-            THROUGHOUT WORLDWIDE.
+          <h1 className="card-title w-[60%]">
+            WITH OVER
+            <span className="text-primary"> 500+ HAPPY CLIENTS</span> —
+             VINSUM ELEVATED THE CREDIBILITY BAR HIGH
           </h1>
-          <p className="card-description">
-            Vinsum has more than 1000 offfices that can serve you to send your
-            package to your destination
+          <p className="card-description w-[50%]">
+            Over 21+ years of experience in logistics and supply chain management with 
+            a base of 500+ satisfied customers incluing but not limited to:
           </p>
         </motion.div>
         <div className="mt-10"></div>

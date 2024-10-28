@@ -36,7 +36,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              to="#"
+              to={ROUTES.PRIVACY_POLICY}
               className="btn bg-white text-black cursor-pointer border rounded-full px-8 py-3 w-fit font-medium "
             >
               Privacy (Data) Policy
@@ -224,8 +224,8 @@ const Footer = () => {
           variants={fadeIn("right", "tween", 0.2, 1)}
           className="mt-8 text-sm text-text"
         >
-          © Copyright 2022
-          <span className=" ml-1">Vinsum Axpress</span>. All Rights Reserved
+          © Copyright 2024
+          <span className="text-primary ml-1">Vinsum Axpress</span>. All Rights Reserved
         </motion.p>
       </motion.div>
     </footer>
