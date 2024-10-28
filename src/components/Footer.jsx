@@ -21,10 +21,10 @@ const Footer = () => {
       >
         <motion.div
           variants={fadeIn("up", "tween", 0.2, 1)}
-          className="flex flex-col max-w-xl mx-auto  items-center justify-center gap-10 w-full"
+          className="flex flex-col mx-auto items-center justify-center gap-10 w-full"
         >
-          <h1 className="card-title text-center">
-            Unlock Tech driven solutions on the go—download our app from the Play Store!
+          <h1 className="antialiased tracking-normal text-base text-center w-full">
+            Unlock Tech driven solutions on the go—download our app from the <span className="text-primary">Play Store!</span> 
           </h1>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link
