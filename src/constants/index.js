@@ -99,7 +99,7 @@ export const serviceQuestions = [
       "Dedicated solution design team that can design solutions based on inputs provided by the customer about the component / part and produce feasibility reports for all your packaging needs consultation.",
   },
   {
-    title: "Management (3LP & 4LP)",
+    title: "3LP/4LP Management",
     description:
       "Our Services often extend beyond logistics to include value-added services related to the production or procurement of goods, such as services that integrate parts of the supply chain.",
   },
