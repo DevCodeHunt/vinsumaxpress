@@ -570,3 +570,90 @@ export const galleries = [
   "https://vinsumaxpress.com/assets/img/gallery/new-vinsum-axpress-images13.jpg",
   "https://vinsumaxpress.com/assets/img/gallery/new-vinsum-axpress-images14.jpg",
 ];
+
+
+export const clients = [
+  {
+    logo: "/images/clients/tata.png",
+  },
+  {
+    logo: "/images/clients/tafe.png",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Fiat_logo23.png"
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/en/3/34/Logo_for_Maruti_Suzuki.svg"
+  },
+  {
+    logo: "https://vinsumaxpress.com/assets/img/clients/sonalika-international-logo.png",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5e/JCB-Logo.jpg"
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/97/NBC_logo.png"
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/31/Suzuki_Motor_Corporation_logo.svg"
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Yazaki_company_logo.svg"
+  },
+  {
+    logo: "https://www.jtekt.co.in/Images/logo.png"
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/en/d/df/Ashok_Leyland_logo.svg"
+  },
+  {
+    logo: "/images/clients/moonlight.png"
+  },
+  {
+    logo: "https://musashi.co.in/images/logo.png"
+  },
+  {
+    logo: "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/f68ff49b2cb542afb061e36729b1da2a?v=80d468ad&t=Size200"
+  },
+  {
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQFIU2-8eAR2Kw/company-logo_200_200/company-logo_200_200/0/1728074552776/carraro_technologies_india_pvt_ltd_logo?e=2147483647&v=beta&t=vwUAM0nkeBHKLmzAWHGSnF266rT84NEsBud-sGqcmvk"
+  },
+  {
+    logo: "https://www.surinauto.com/wp-content/uploads/2023/09/logo.webp"
+  },
+  {
+    logo: "/images/clients/tennecco.svg",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Escorts_Kubota_Limited.jpg",
+  },
+];
+
+export const faqs = [
+  {
+    question: "What services do you offer?",
+    answer:
+      "We provide freight transportation, warehousing, customs brokerage, and supply chain management. We operate nationwide/internationally, serving key logistics hubs and regional markets.",
+  },
+  {
+    question: "How do I track my shipment?",
+    answer:
+      "You can track your shipment using our online tracking tool with your tracking number. Our customer service is also availabe 24/7 for any concerns.",
+  },
+  {
+    question: "How do I request a quote?",
+    answer:
+      "You can request a quote through our website or by contacting our customer service team directly.",
+  },
+  {
+    question: "How do you ensure the safety of my shipment?",
+    answer:
+      "We implement strict safety protocols and provide real-time monitoring throughout the transportation process.",
+  },
+  {
+    question:
+      "Are there any additional fees for using your technology services?",
+    answer:
+      "No, our technology services are included in our overall pricing. There are no hidden fees for utilizing our tracking or management tools.",
+  },
+];
