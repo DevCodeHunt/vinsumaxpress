@@ -40,6 +40,7 @@ const Contact = () => {
         name: values.fullName,
         ...values,
       };
+      delete requestBody.fullName
       await axios.post(
         "https://ccptestapi.vinsumaxpress.com/api/Email/SendEmail",
         requestBody,
