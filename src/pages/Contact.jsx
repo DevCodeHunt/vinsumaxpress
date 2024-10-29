@@ -1,12 +1,23 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import { companyDetail, faqs } from "../constants";
+import { companyDetail } from "../constants";
 import AnimationWrapper from "../components/AnimationWrapper";
-import {  ChevronDown, ChevronUp} from "lucide-react";
+import * as Yup from "yup";
+import { useFormik } from "formik";
+
+const contactSchema = Yup.object().shape({
+  fullName: Yup.string().required("Full Name is required").trim(),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required")
+    .trim(),
+  subject: Yup.string().required("Subject is required").trim(),
+  message: Yup.string().required("Message is required").trim(),
+});
 
 const initialValues = {
   fullName: "",
@@ -15,41 +26,33 @@ const initialValues = {
   message: "",
 };
 const Contact = () => {
-  const [values, setValues] = useState(initialValues);
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     document.title = "Contact Us | Vinsum Axpress";
   }, []);
 
-  const handleInputChange = (event) => {
-    const { id, value } = event.target;
-    setValues({ ...values, [id]: value });
-  };
-
-  const handleSendMessage = (event) => {
-    event.preventDefault();
+  const handleSendMessage = async (values, { resetForm }) => {
     setIsLoading(true);
-    setErrorMessage("");
+    try {
+      console.log(values);
 
-    const { fullName, email, subject, message } = values;
-
-    if (!fullName || !email || !subject || !message) {
-      setIsLoading(false);
-      setErrorMessage("All fields are required");
-      return;
-    }
-
-    // Simulate sending email
-    setTimeout(() => {
-      setIsLoading(false);
-      setValues(initialValues);
       toast.success("Message sent successfully!");
-    }, 2000);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+      resetForm();
+    }
   };
 
-  const { fullName, email, subject, message } = values;
+  const formik = useFormik({
+    initialValues,
+    validationSchema: contactSchema,
+    onSubmit: handleSendMessage,
+  });
+
+  const { fullName, email, subject, message } = formik.values;
   return (
     <AnimationWrapper>
       <motion.section
@@ -57,7 +60,7 @@ const Contact = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="py-16"
+        className="py-20"
       >
         <motion.div
           variants={fadeIn("right", "tween", 0.2, 1)}
@@ -73,7 +76,7 @@ const Contact = () => {
         </motion.div>
       </motion.section>
 
-      <section className="py-3">
+      <section className="py-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -164,14 +167,15 @@ const Contact = () => {
             <h2 className="text-4xl font-bold mb-4">Get in touch</h2>
             <p>Our friendly team would love to hear from you!</p>
 
-            <form onSubmit={handleSendMessage} className="space-y-4 my-8">
+            <form onSubmit={formik.handleSubmit} className="space-y-4 my-8">
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
                 <Input
                   label="Full Name"
                   id="fullName"
                   name="fullName"
                   value={fullName}
-                  onChange={handleInputChange}
+                  onChange={formik.handleChange}
+                  error={formik.errors?.fullName}
                 />
                 <Input
                   label="Email"
@@ -179,7 +183,8 @@ const Contact = () => {
                   type="email"
                   name="email"
                   value={email}
-                  onChange={handleInputChange}
+                  onChange={formik.handleChange}
+                  error={formik.errors?.email}
                 />
               </div>
               <Input
@@ -187,15 +192,16 @@ const Contact = () => {
                 id="subject"
                 name="subject"
                 value={subject}
-                onChange={handleInputChange}
+                onChange={formik.handleChange}
+                error={formik.errors?.subject}
               />
               <Textarea
                 label="Message"
                 id="message"
                 name="message"
-                type="textarea"
                 value={message}
-                onChange={handleInputChange}
+                onChange={formik.handleChange}
+                error={formik.errors?.message}
               />
               <button
                 disabled={isLoading}
@@ -204,68 +210,11 @@ const Contact = () => {
               >
                 {isLoading ? "Sending..." : "Send Message"}
               </button>
-
-              {errorMessage && (
-                <div className="py-4 px-2 bg-primary/10 text-primary rounded">
-                  {errorMessage}
-                </div>
-              )}
             </form>
           </motion.div>
         </motion.div>
       </section>
-
-      <motion.div
-             variants={fadeIn("right", "tween", 0.2, 1)}
-             className="flex flex-col items-center justify-center gap-3 mt-16"
-           >
-             <h1 className="text-3xl text-center">FAQs</h1>
-             <p className="text-sm text-gray-600 text-center max-w-sm">
-               Questions on Your Mind? Let&#39;s Solve Them Together!
-             </p>
-           </motion.div>
-      <Faqs />
     </AnimationWrapper>
-  );
-};
-
-
-const Faqs = () => {
-  const [active, setActive] = useState(null);
-
-  const handleActive = useCallback(
-    (index) => setActive((prevActive) => (prevActive === index ? null : index)),
-    []
-  );
-  return (
-    <motion.div
-      variants={fadeIn("up", "tween", 0.2, 1)}
-      className="max-w-xl mx-auto  w-full flex flex-col gap-6 mb-16 mt-10"
-    >
-      {faqs.map((faq, index) => {
-        const isActive = active === index;
-        return (
-          <AnimationWrapper
-            transition={{ duration: 1, delay: index * 0.2 }}
-            onClick={() => handleActive(index)}
-            key={index}
-            className="border rounded-lg p-4 space-y-4 transition-all duration-1000"
-          >
-            <div className="flex items-center justify-between cursor-pointer">
-              <p className={isActive && "font-semibold"}>{faq.question}</p>
-              <button>
-                {isActive ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-              </button>
-            </div>
-            <div
-              className={`text-sm opacity-70 ${isActive ? "block" : "hidden"}`}
-            >
-              {faq.answer}
-            </div>
-          </AnimationWrapper>
-        );
-      })}
-    </motion.div>
   );
 };
 

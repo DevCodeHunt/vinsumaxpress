@@ -18,9 +18,9 @@ const Textarea = ({
         value={value}
         onChange={onChange}
         {...rest}
-        className="bg-neutral-200 outline-none focus:outline-0 rounded-lg py-3 px-3 text-sm text-gray-900  resize-none"
+        className="bg-neutral-200 outline-none focus:outline-0 rounded-2xl py-3 px-3 text-sm text-gray-900  resize-none"
       />
-      {error && <small className="text-red-600">Required</small>}
+      {error && <small className="text-red-600 px-4">{error}</small>}
     </div>
   );
 };
