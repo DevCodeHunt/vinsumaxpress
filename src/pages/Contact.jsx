@@ -8,6 +8,7 @@ import { companyDetail } from "../constants";
 import AnimationWrapper from "../components/AnimationWrapper";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import axios from "axios";
 
 const contactSchema = Yup.object().shape({
   fullName: Yup.string().required("Full Name is required").trim(),
@@ -35,14 +36,27 @@ const Contact = () => {
   const handleSendMessage = async (values, { resetForm }) => {
     setIsLoading(true);
     try {
-      console.log(values);
+      const requestBody = {
+        name: values.fullName,
+        ...values,
+      };
+      await axios.post(
+        "https://ccptestapi.vinsumaxpress.com/api/Email/SendEmail",
+        requestBody,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
-      toast.success("Message sent successfully!");
+      toast.success(
+        "Your response is recorded. we'll come back to you shortly."
+      );
+      resetForm();
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong. Please try again later.");
     } finally {
       setIsLoading(false);
-      resetForm();
     }
   };
 
