@@ -34,7 +34,7 @@ const Navbar = () => {
         navBg ? "bg-neutral-50 !text-black" : " bg-white/20 shadow-lg"
       } top-0 left-0 right-0 z-50 w-full`}
     >
-      <div className="py-3 wrapper flex items-center justify-between gap-4">
+      <div className="py-3 wrapper flex flex-wrap items-center justify-between gap-4">
         <div>
           <a
             href={`tel:${companyDetail.contact}`}

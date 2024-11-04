@@ -54,9 +54,9 @@ const HeroSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="min-h-screen py-10 relative"
+        className="md:pt-[700px] pb-28 sm:pt-[700px] pt-[800px] relative"
       >
-        <div className="wrapper text-white absolute inset-0 z-10 flex flex-col justify-center md:pt-64 min-[526px]:pt-40 pt-56">
+        <div className="wrapper text-white absolute inset-0 z-10 flex flex-col justify-center md:pt-40 min-[526px]:pt-40 pt-44">
           <div className=" flex md:flex-row flex-col gap-6">
             <motion.div
               variants={fadeIn("right", "tween", 0.2, 1)}
