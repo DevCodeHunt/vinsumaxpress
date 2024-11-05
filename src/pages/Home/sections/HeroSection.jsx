@@ -54,7 +54,7 @@ const HeroSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="md:pt-[700px] pb-28 sm:pt-[700px] pt-[800px] relative"
+        className="md:pt-[700px] pb-28  pt-[700px] relative"
       >
         <div className="wrapper text-white absolute inset-0 z-10 flex flex-col justify-center md:pt-40 min-[526px]:pt-40 pt-44">
           <div className=" flex md:flex-row flex-col gap-6">
