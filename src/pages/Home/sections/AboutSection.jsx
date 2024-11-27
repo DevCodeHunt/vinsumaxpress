@@ -22,20 +22,20 @@ const AboutSection = () => {
       <Card hasBg>
         <div className="space-y-3 max-w-xl">
           <motion.p
-            variants={fadeIn("down", "tween", 0.2, 1)}
+            variants={fadeIn("down", "tween", 0.2, 0.5)}
             className="card-name"
           >
             About us
           </motion.p>
           <motion.h1
-            variants={fadeIn("right", "tween", 0.2, 1)}
+            variants={fadeIn("right", "tween", 0.2, 0.5)}
             className="card-title"
           >
             WHY US.
           </motion.h1>
 
           <motion.p
-            variants={fadeIn("right", "tween", 0.2, 1)}
+            variants={fadeIn("right", "tween", 0.2, 0.5)}
             className="card-description"
           >
             Innovative Solutions for Every Journey: From real-time tracking to

@@ -67,13 +67,13 @@ const AboutSection2 = () => {
       <Card hasBg>
         <div className="space-y-3 max-w-xl">
           <motion.p
-            variants={fadeIn("down", "tween", 0.2, 1)}
+            variants={fadeIn("down", "tween", 0.2, 0.5)}
             className="card-name"
           >
             Our journey
           </motion.p>
           <motion.h1
-            variants={fadeIn("right", "tween", 0.2, 1)}
+            variants={fadeIn("right", "tween", 0.2, 0.5)}
             className="card-title"
           >
             <span className="text-primary">Vinsum</span> Is One Of The Best
@@ -81,7 +81,7 @@ const AboutSection2 = () => {
           </motion.h1>
 
           <motion.p
-            variants={fadeIn("right", "tween", 0.2, 1)}
+            variants={fadeIn("right", "tween", 0.2, 0.5)}
             className="card-description"
           >
             For the past two decades, Vinsum has proudly established itself as a
@@ -92,7 +92,7 @@ const AboutSection2 = () => {
 
         <motion.div
           id="counterSection"
-          variants={fadeIn("right", "tween", 0.2, 1)}
+          variants={fadeIn("right", "tween", 0.2, 0.5)}
           className="my-8 flex gap-8 flex-wrap"
         >
           <div className="flex flex-col gap-1">

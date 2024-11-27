@@ -75,11 +75,11 @@ const Clients = () => {
         >
           {clients.map((client, index) => (
             <SwiperSlide key={index} className="py-4">
-              <div className="flex overflow-y-hidden overflow-x-scroll border-1 p-4 bg-gray-50">
+              <div className="flex overflow-hidden border-1 p-4 bg-gray-50">
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="h-16 w-full"
+                  className="h-16 w-full object-contain"
                 />
               </div>
             </SwiperSlide>

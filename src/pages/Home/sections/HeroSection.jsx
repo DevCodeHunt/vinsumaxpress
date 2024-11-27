@@ -59,7 +59,7 @@ const HeroSection = () => {
         <div className="wrapper text-white absolute inset-0 z-10 flex flex-col justify-center md:pt-40 min-[526px]:pt-40 pt-44">
           <div className=" flex md:flex-row flex-col gap-6">
             <motion.div
-              variants={fadeIn("right", "tween", 0.2, 1)}
+              variants={fadeIn("right", "tween", 0.2, 0.5)}
               className="flex-1"
             >
               <h1 className="md:text-6xl sm:text-4xl text-3xl font-bold uppercase leading-tight">
@@ -87,7 +87,7 @@ const HeroSection = () => {
 
           <div className="py-10 grid md:grid-cols-2 gap-6 ">
             <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
+              variants={fadeIn("up", "tween", 0.2, 0.5)}
               className="max-w-96 w-full border rounded-2xl p-4 space-y-10 bg-white text-black shadow isolate bg-white/20 shadow-lg ring-1 ring-black/5"
             >
               <div className="flex items-center justify-between gap-3">
@@ -160,7 +160,7 @@ const HeroSection = () => {
 
            
             <motion.div
-              variants={fadeIn("left", "tween", 0.2, 1)}
+              variants={fadeIn("left", "tween", 0.2, 0.5)}
               className="space-y-6 md:ml-auto h-fit"
             >
               <p className="max-w-72">
