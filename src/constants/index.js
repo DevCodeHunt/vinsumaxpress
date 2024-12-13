@@ -43,6 +43,56 @@ export const companyDetail = {
   youtube: "www.youtube.com/@vinsumaxpressindiapvtltd.8044",
 };
 
+export const homeOurValues = [
+  {
+    image: "/images/people-first.png",
+    title: "People First",
+  },
+  {
+    image: "/images/integrity.png",
+    title: "Integrity",
+  },
+  {
+    image: "/images/partnership.png",
+    title: "Partnerships",
+  },
+  {
+    image: "/images/excellence.png",
+    title: "Excellence",
+  },
+  {
+    image: "/images/accountability.png",
+    title: "Accountability",
+  },
+  {
+    image: "/images/innovation.png",
+    title: "Innovation",
+  },
+];
+
+export const homeServices = [
+  {
+    image: "/images/multimodal.png",
+    title: "Multimodal Transportation",
+  },
+  {
+    image: "/images/warehousing.png",
+    title: "Warehousing Solution",
+  },
+  {
+    image: "/images/3pl-and-inventory.png",
+    title: "3PL & Inventry Management",
+  },
+  {
+    image: "/images/packaging.png",
+    title: "Packaging Solution",
+  },
+  {
+    image: "/images/4pl-inplant.png",
+    title: "4PL/Inplant Logistics Project Management",
+  },
+];
+
 export const aboutCards = [
   {
     image: "/images/real-time-locator.svg",
@@ -201,24 +251,21 @@ export const serviceData = [
   {
     name: "Medtronic",
     label: "Electric car charging",
-    image:
-      "/images/railway-trains-carrying-goods-pass-quickly-(1).jpg",
+    image: "/images/railway-trains-carrying-goods-pass-quickly-(1).jpg",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
   },
   {
     name: "Medtronic XYZ",
     label: "Residental solar panels",
-    image:
-      "/images/airplane-design-air-freight-logistics.jpg",
+    image: "/images/airplane-design-air-freight-logistics.jpg",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
   },
   {
     name: "Medtronic ABC",
     label: "Wind power industry",
-    image:
-      "/images/back-closeup-view-delivery-truck-driving-road.jpg",
+    image: "/images/back-closeup-view-delivery-truck-driving-road.jpg",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi error recusandae animi, est velit officia alias inventore modi soluta, molestiae exercitationem reiciendis commodi deserunt temporibus illo harum. Voluptate, optio!",
   },
@@ -571,7 +618,6 @@ export const galleries = [
   "https://vinsumaxpress.com/assets/img/gallery/new-vinsum-axpress-images14.jpg",
 ];
 
-
 export const clients = [
   {
     logo: "/images/clients/tata.png",
@@ -580,46 +626,46 @@ export const clients = [
     logo: "/images/clients/tafe.png",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Fiat_logo23.png"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Fiat_logo23.png",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/3/34/Logo_for_Maruti_Suzuki.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/en/3/34/Logo_for_Maruti_Suzuki.svg",
   },
   {
     logo: "https://vinsumaxpress.com/assets/img/clients/sonalika-international-logo.png",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5e/JCB-Logo.jpg"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5e/JCB-Logo.jpg",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/97/NBC_logo.png"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/97/NBC_logo.png",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/31/Suzuki_Motor_Corporation_logo.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/31/Suzuki_Motor_Corporation_logo.svg",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Yazaki_company_logo.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Yazaki_company_logo.svg",
   },
   {
-    logo: "https://www.jtekt.co.in/Images/logo.png"
+    logo: "https://www.jtekt.co.in/Images/logo.png",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/d/df/Ashok_Leyland_logo.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/en/d/df/Ashok_Leyland_logo.svg",
   },
   {
-    logo: "/images/clients/moonlight.png"
+    logo: "/images/clients/moonlight.png",
   },
   {
-    logo: "https://musashi.co.in/images/logo.png"
+    logo: "https://musashi.co.in/images/logo.png",
   },
   {
-    logo: "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/f68ff49b2cb542afb061e36729b1da2a?v=80d468ad&t=Size200"
+    logo: "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/f68ff49b2cb542afb061e36729b1da2a?v=80d468ad&t=Size200",
   },
   {
-    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQFIU2-8eAR2Kw/company-logo_200_200/company-logo_200_200/0/1728074552776/carraro_technologies_india_pvt_ltd_logo?e=2147483647&v=beta&t=vwUAM0nkeBHKLmzAWHGSnF266rT84NEsBud-sGqcmvk"
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQFIU2-8eAR2Kw/company-logo_200_200/company-logo_200_200/0/1728074552776/carraro_technologies_india_pvt_ltd_logo?e=2147483647&v=beta&t=vwUAM0nkeBHKLmzAWHGSnF266rT84NEsBud-sGqcmvk",
   },
   {
-    logo: "https://www.surinauto.com/wp-content/uploads/2023/09/logo.webp"
+    logo: "https://www.surinauto.com/wp-content/uploads/2023/09/logo.webp",
   },
   {
     logo: "/images/clients/tennecco.svg",

@@ -6,6 +6,7 @@ import HeroSection from "./sections/HeroSection";
 import OfficeSection from "./sections/OfficeSection";
 import ServiceSection from "./sections/ServiceSection";
 import AnimationWrapper from "../../components/AnimationWrapper";
+import OurValuesSection from "./sections/OurValuesSection";
 
 const Home = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,6 +24,7 @@ const Home = () => {
   return (
     <AnimationWrapper>
       <HeroSection />
+      <OurValuesSection />
       <AboutSection />
       <AboutSection2 />
       <ServiceSection />

@@ -6,6 +6,8 @@ import { FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import { FaFacebookF, FaYoutube, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const menuLink =
@@ -24,7 +26,8 @@ const Footer = () => {
           className="flex flex-col mx-auto items-center justify-center gap-10 w-full"
         >
           <h1 className="antialiased tracking-normal text-base text-center w-full">
-            Unlock Tech driven solutions on the go—download our app from the <span className="text-primary">Play Store!</span> 
+            Unlock Tech driven solutions on the go—download our app from the{" "}
+            <span className="text-primary">Play Store!</span>
           </h1>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link
@@ -61,14 +64,16 @@ const Footer = () => {
                 alt="logo"
                 className="w-8 h-8 object-contain"
               />
-              <h1 className="text-3xl font-bold"><span className="text-primary">VIN</span>SUM</h1>
+              <h1 className="text-3xl font-bold">
+                <span className="text-primary">VIN</span>SUM
+              </h1>
             </div>
 
             <p className="text-lg antialiased font-semibold tracking-wider text-black my-2 max-w-sm w-full">
               Vinsum Axpress India Private Limited.
             </p>
             <div className="bg-black rounded p-0 px-1 w-fit">
-              <p className="text-sm text-text antialiased my-2 max-w-sm w-full tracking-wider text-white">
+              <p className="text-sm tantialiased my-2 max-w-sm w-full tracking-wider text-white">
                 Delivering Satisfaction Around The Globe
               </p>
             </div>
@@ -169,54 +174,61 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold">Social Media</h3>
-            <ul className="space-y-2 mt-2">
+            <figure className="w-fit">
+              <img src="/images/QR.png" alt="qr-code" className="md:w-auto md:h-auto w-40 h-40 object-contain" />
+              {/* <figcaption className="text-xs text-text text-center">
+                Scan this QR code to download our app
+              </figcaption> */}
+            </figure>
+            <ul className="mt-2 flex items-center gap-4 flex-wrap">
               <li>
                 <a
                   href={companyDetail.facebook}
                   target="_blank"
-                  className={menuLink}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
                 >
-                  Facebook
+                  <FaFacebookF />
                 </a>
               </li>
               <li>
                 <a
                   href={ROUTES.MEDIACENTER}
                   target="_blank"
-                  className={menuLink}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
                 >
-                  Instagram
+                  <FaInstagram />
                 </a>
               </li>
               <li>
                 <a
                   href={companyDetail.linkedin}
                   target="_blank"
-                  className={menuLink}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
                 >
-                  Linkedin
+                  <FaLinkedinIn />
                 </a>
               </li>
               <li>
                 <a
                   href={companyDetail.twitter}
                   target="_blank"
-                  className={menuLink}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
                 >
-                  Twitter
+                  <FaXTwitter />
                 </a>
               </li>
               <li>
                 <a
                   href={companyDetail.youtube}
                   target="_blank"
-                  className={menuLink}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
                 >
-                  Youtube
+                  <FaYoutube />
                 </a>
               </li>
             </ul>
+            {/* <h3 className="font-semibold">Social Media</h3>
+             */}
           </div>
         </motion.div>
 
@@ -225,7 +237,8 @@ const Footer = () => {
           className="mt-8 text-sm text-text"
         >
           © Copyright 2024
-          <span className="text-primary ml-1">Vinsum Axpress</span>. All Rights Reserved
+          <span className="text-primary ml-1">Vinsum Axpress</span>. All Rights
+          Reserved
         </motion.p>
       </motion.div>
     </footer>
