@@ -180,7 +180,7 @@ const Footer = () => {
                 Scan this QR code to download our app
               </figcaption> */}
             </figure>
-            <ul className="mt-2 flex items-center gap-4 flex-wrap">
+            <ul className="mt-2 flex items-center md:justify-center gap-4 flex-wrap">
               <li>
                 <a
                   href={companyDetail.facebook}
