@@ -271,6 +271,95 @@ export const serviceData = [
   },
 ];
 
+export const multimodalTransPortations = [
+  {
+    image: "/images/",
+    title: "Road Services",
+    description:
+      "Catering to the needs of our clients, we offer high volume of freight transportation by roads.",
+    offers: [
+      "Flexible routing & GPS enabled fleet",
+      "FTL/PTL Managment",
+      "OOC cargo movement",
+      "With 920+ Fleet size covering more than 3 lakh km per day",
+      "Milk run transportation",
+      "Weather proof containerized vehicle",
+    ],
+  },
+  {
+    image: "/images/",
+    title: "Speed Truck Services",
+    description:
+      "VINSUM is an organization who provides same day delivery to Customers at their Specified Locations considering the Customer Requirement in Current Scenario.",
+    offers: [
+      "Well defined routes (Dharuhera, Pune, Jamshedpur, Chennai, Ahmedabad, Nagpur, Nashik, Pantnagar & Bangalore)",
+      "24-96 hrs TAT in pan India",
+      "Cut off time at 2 a.m every day",
+    ],
+  },
+  {
+    image: "/images/",
+    title: "Rail Services",
+    description:
+      "We collabarate with DFC, Indian Railways, and the Ministry of Railways under the PM Gati Shakti plan fo greener logistics. We currently operate 6 routes with dedicated freight trains and VPU wagons, connecting North India wuth Bangalore, Chennai, kolkata, Guwahati, and Gujarat.",
+    offers: [
+      "Truck On train (TOT)/RORO services",
+      "VPU serices through dedicated freight trains",
+      "SLR services",
+      "NMG CBU Transportation",
+    ],
+  },
+  {
+    image: "/images/",
+    title: "Air Services",
+    description:
+      "Our expeienced staff organize national and international air cargo shipping for a wide range of cargoes by selecting optimal routes based on your individual needs",
+    offers: [
+      "Time-sensitive express deliveries",
+      "Wide geographical reach",
+      "Dedicated cargo flights (GCR, Fast Track, Hand Carry)",
+      "Door-to-door & airport-to-airport services",
+      "18-24 hrs in metro cities",
+      "24-48 hrs in non-metro cities airlines",
+    ],
+  },
+];
+
+export const integratedSupplyChains = [
+  {
+    image: "/images/",
+    text: "Packaging Solutions Green returanable & Customized Packaging Solution",
+  },
+  {
+    image: "/images/",
+    text: "Multi-modal Transportation Surface Train & Air",
+  },
+  {
+    image: "/images/",
+    text: "Warehouse Management Dashboard Enables WMS",
+  },
+  {
+    image: "/images/",
+    text: "Inventory Control Customized App For Accurate & Real Time Visibility",
+  },
+  {
+    image: "/images/",
+    text: "Value Added Services Ownership of Quality People & Processes",
+  },
+  {
+    image: "/images/",
+    text: "Last Mile",
+  },
+  {
+    image: "/images/",
+    text: "Packaging Solutions Green returanable & Customized Packaging Solution",
+  },
+  {
+    image: "/images/",
+    text: "Consultancy Design & implement integrated Solution",
+  },
+];
+
 export const openings = [
   {
     position: "IT Development Head-GM/AGM",

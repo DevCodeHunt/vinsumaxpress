@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { leadershipTeams, missionVisonValues, networks } from "../constants";
+import { leadershipTeams, networks } from "../constants";
 import { ROUTES } from "../utils/routes";
 import { MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "../utils/motion";
+import { fadeIn, staggerContainer, zoomIn } from "../utils/motion";
 import AnimationWrapper from "../components/AnimationWrapper";
-
 
 const About = () => {
   return (
@@ -56,18 +55,101 @@ const About = () => {
             </Link>
           </motion.div>
 
-          <motion.div variants={fadeIn("left", "tween", 0.2, 1)} className="bg-white drop-shadow-xl shadow-xl rounded-2xl">
-             <img
+          <motion.div
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            className="drop-shadow-xl shadow-xl rounded-2xl"
+          >
+            <img
               src="https://vinsumaxpress.com/assets/img/gallery/vinsum-axpress-warehouse-image-31.jpg"
               alt="about image"
-              className="w-full h-[50%] rounded-t-2xl"
+              className="w-full h-full object-cover rounded-xl"
             />
-            
           </motion.div>
         </motion.div>
       </section>
 
-      <section className="py-20">
+      <section className="relative py-16">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper"
+        >
+          <motion.figure variants={zoomIn(0.02, 1)}>
+            <img src="/images/road-map.png" alt="road-map" />
+          </motion.figure>
+        </motion.div>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper py-16 grid lg:grid-cols-3 gap-4"
+        >
+          <motion.div
+            variants={fadeIn("right", "tween", 0.2, 1)}
+            className="grid lg:grid-cols-1 sm:grid-cols-2 flex-wrap gap-14 w-full"
+          >
+            <div className="md:w-[300px] relative bg-black/90 text-white rounded-xl p-4">
+              <img
+                src="/images/mission-10.png"
+                alt="mission-10"
+                className="absolute -top-12 sm:-left-10 -left-4 w-24 h-24 object-contain"
+              />
+              <h3 className="text-center font-semibold text-lg">MISSION</h3>
+              <p className="text-sm mt-2s">
+                To accomplish the designed goal in time bound period by the way
+                of creating and using an infrastructure fully equipped with the
+                latest technology and trained manpower. Customized according to
+                market requirement.
+              </p>
+            </div>
+            <div className="md:w-[300px] relative bg-primary text-white rounded-xl p-4">
+              <img
+                src="/images/vision-10.png"
+                alt="vision-10"
+                className="absolute -top-14 sm:-left-10 -left-6 w-28 h-28 object-contain"
+              />
+              <h3 className="text-center font-semibold text-lg">VISION</h3>
+              <p className="text-sm mt-2">
+                To become eminent logistics service provider to industries with
+                latest technology & creating win-win situation for all
+                associates by providing competitive, cost effective, sale
+                secure, time bound error, free quality service. To be recognized
+                as expert in logistics and supply chain service with top match
+                customer service.
+              </p>
+            </div>
+            <div className="md:w-[300px] relative bg-black/90 text-white rounded-xl p-4">
+              <img
+                src="/images/value-10.png"
+                alt="value-10"
+                className="absolute -top-12 sm:-left-10 -left-4 w-24 h-24 object-contain"
+              />
+              <h3 className="text-center font-semibold text-lg">VALUES</h3>
+              <p className="text-sm mt-2">
+                To become eminent logistics service provider to industries with
+                latest technology & creating win-win situation for all
+                associates by providing competitive, cost effective, sale
+                secure, time bound error, free quality service. To be recognized
+                as expert in logistics and supply chain service with top match
+                customer service.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.figure
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            className="lg:col-span-2"
+          >
+            <img src="/images/network-map.png" alt="network-map" />
+          </motion.figure>
+        </motion.div>
+      </section>
+
+      {/* <section className="py-20">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -96,7 +178,9 @@ const About = () => {
                   alt={obj.name}
                   className="w-16 object-cover"
                 />
-                <h1 className="pt-6 text-2xl font-bold text-primary">{obj.name}</h1>
+                <h1 className="pt-6 text-2xl font-bold text-primary">
+                  {obj.name}
+                </h1>
 
                 <ul className="space-y-2 pt-4 pl-2 list-disc">
                   {obj.lists.map((list, idx) => (
@@ -109,12 +193,6 @@ const About = () => {
             ))}
           </motion.div>
         </motion.div>
-      </section>
-
-      {/* <section className="py-20">
-        <div className="wrapper">
-         
-        </div>
       </section> */}
 
       <motion.section
@@ -392,7 +470,9 @@ const About = () => {
           <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
             <h1 className="text-3xl font-bold">Join Our Team Now</h1>
             <p className="opacity-60 mt-2 text-sm">
-              Ready to make an impact? Join our team of passionate innovators and drive real change with us! Discover your next career adventure—apply today!
+              Ready to make an impact? Join our team of passionate innovators
+              and drive real change with us! Discover your next career
+              adventure—apply today!
             </p>
           </motion.div>
 

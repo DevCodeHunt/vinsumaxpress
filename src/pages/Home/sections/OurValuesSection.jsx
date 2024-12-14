@@ -15,7 +15,7 @@ const OurValuesSection = () => {
           OUR VALUES
         </motion.div>
 
-        <div className="wrapper flex flex-wrap items-center justify-center md:gap-10 gap-6  mx-auto">
+        <div className="wrapper flex flex-wrap items-center justify-center xl:gap-10 gap-4  mx-auto">
           {homeOurValues.map(({ image, title }, index) => (
             <motion.div
               variants={fadeInOpacity(index * 0.1)}
@@ -34,8 +34,8 @@ const OurValuesSection = () => {
                 alt={title}
                 className={`${
                   index === homeOurValues.length - 1
-                    ? "w-28 h-28"
-                    : "w-24 h-24 "
+                    ? "w-28 h-24"
+                    : "w-24 h-24"
                 } object-contain`}
               />
             </motion.div>

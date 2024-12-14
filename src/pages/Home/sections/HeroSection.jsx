@@ -83,7 +83,7 @@ const HeroSection = () => {
                 </span>
               </h1>
             </motion.div>
-            <motion.img variants={fadeIn("left", "tween", 0.2, 0.5)} src="/images/23-YEARS-10.png" alt="23-YEARS-10.png"  className="w-44 object-contain sm:inline-flex hidden" />
+            <motion.img variants={fadeIn("left", "tween", 0.2, 0.5)} src="/images/23-YEARS-10.png" alt="23-YEARS-10.png"  className="h-80 absolute right-20 top-28 object-contain lg:inline-flex hidden" />
           </div>
 
           <div className="py-10 grid md:grid-cols-2 gap-6 ">
