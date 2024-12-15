@@ -8,7 +8,7 @@ import {
   NotebookText,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { serviceData } from "../constants";
+import { multimodalTransPortations, serviceData } from "../constants";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
@@ -186,6 +186,48 @@ const Services = () => {
             <AnimationWrapper className="w-[200px] h-[200px] cursor-pointer rounded-full bg-foreground flex items-center font-semibold justify-center transition duration-300 hover:drop-shadow hover:shadow hover:bg-white hover:text-primary">
               Medtronic
             </AnimationWrapper>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <section className="py-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          className="wrapper"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <motion.div
+            variants={fadeIn("top", "tween", 0.2, 0.5)}
+            className="uppercase bg-primary text-white w-max p-2 px-4 mb-6 mx-auto font-semibold text-lg rounded-tr-3xl rounded-bl-3xl"
+          >
+            MULTIMODAL TRANSPORTATION
+          </motion.div>
+
+          <motion.div
+            variants={fadeIn("right", "tween", 0.2, 0.5)}
+            className="mt-10 grid grid-cols-4 gap-4"
+          >
+            {multimodalTransPortations.map(
+              ({ title, description, offers }, index) => (
+                <div key={index}>
+                  <div className="h-[200px] rounded-xl shadow mb-2"></div>
+                  <div className="">
+                    <h3 className="text-primary">{title}</h3>
+                    <p className="text-sm my-2">{description}</p>
+                    <p className="text-primary">We offer:</p>
+                    <ul className="list-disc pl-6">
+                      {offers.map((offer, index) => (
+                        <li key={index} className="text-sm text-text">
+                          {offer}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )
+            )}
           </motion.div>
         </motion.div>
       </section>

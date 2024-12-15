@@ -148,16 +148,10 @@ const AboutSection2 = () => {
           variants={fadeIn("up", "tween", 0.2, 1)}
           className="rounded-2xl relative lg:aspect-auto lg:h-[400px] aspect-video w-full"
         >
-          <video
-            ref={videoRef}
-            muted
-            autoPlay
-            title="Video Indroduction"
-            poster="https://cdn.pixabay.com/photo/2014/09/11/22/00/dock-441989_1280.jpg"
-            className="w-full h-full absolute bg-transparent  inset-0 z-10 object-cover rounded-2xl"
-          >
+          <video ref={videoRef} muted autoPlay title="Video Indroduction">
             <source src="/videos/growth-track.mp4" type="video/mp4"></source>
           </video>
+          <div className="absolute -bottom-1 left-0 right-0 bg-background z-10 h-4"></div>
           {/* <video
             ref={videoRef}
             muted

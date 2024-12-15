@@ -59,6 +59,7 @@ const ServiceSection = () => {
             >
               <source src="/videos/service-pannel.mp4" type="video/mp4"></source>
             </video>
+            
           </motion.div>
           <div className="space-y-4">
             {serviceQuestions.map((service, index) => {
