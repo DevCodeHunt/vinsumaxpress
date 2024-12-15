@@ -207,7 +207,7 @@ const Services = () => {
 
           <motion.div
             variants={fadeIn("right", "tween", 0.2, 0.5)}
-            className="mt-10 grid grid-cols-4 gap-4"
+            className="mt-10 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4"
           >
             {multimodalTransPortations.map(
               ({ title, description, offers }, index) => (
