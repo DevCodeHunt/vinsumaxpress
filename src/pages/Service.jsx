@@ -36,156 +36,65 @@ const Services = () => {
   }, [hash]);
   return (
     <>
-      <section className="wrapper py-8">
-        <div
-          style={{
-            backgroundImage: "url(/images/warehouse-climate-control.jpg)",
-          }}
-          className="wrapper  relative w-full rounded-3xl min-h-[90vh] bg-cover bg-no-repeat"
-        >
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
-            className="absolute wrapper inset-0 bg-black/30 rounded-3xl grid md:grid-cols-2 md:gap-4 gap-8  py-20  h-full  text-white w-full z-10"
-          >
-            <motion.div
-              variants={
-                desktop
-                  ? fadeIn("up", "tween", 0.2, 1)
-                  : fadeIn("right", "tween", 0.2, 1)
-              }
-              className="space-y-4 h-full flex flex-col justify-center"
-            >
-              <p># 1 Energy provider in the world</p>
-              <h1 className="lg:text-8xl sm:text-6xl text-5xl font-medium">
-                New Energy for the future
-              </h1>
-              <div className="flex items-center gap-6">
-                <button
-                  type="button"
-                  onClick={() => navigate(ROUTES.CONTACT)}
-                  className="btn border-b-2 !rounded-none border-white"
-                >
-                  Get in touch <ArrowUpRight />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => navigate(ROUTES.FRANCHISE)}
-                  className="btn border-b-2 !rounded-none border-white"
-                >
-                  Become Franchisee <ArrowUpRight />
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
-              className="w-[300px] h-[300px] flex flex-col justify-between rounded-3xl mx-auto bg-white/40 p-2"
-            >
-              <img
-                src="/images/professional-packer-wrapping-electronic-equipment-with-bubble-wrap-hightech-industrial-packing-area.jpg"
-                alt="image"
-                className="rounded-2xl w-[200px] h-[200px] object-cover"
-              />
-              <div className="w-full flex items-center justify-between">
-                <a
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-transparent border border-white/60 flex items-center justify-center"
-                >
-                  <ArrowUpRight />
-                </a>
-                <p className="text-2xl ml-auto">
-                  Discover Our <br /> Recent Project
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
-            className="bg-white rounded-tl-3xl md:w-1/2 h-40 p-4 z-10 absolute right-0 md:left-auto left-0 md:bottom-0 -bottom-40 px-4 flex items-center gap-4"
-          >
-            {/* <div className="absolute w-10 h-10 -right-6 -rotate-[40deg] -top-8 rounded-xl bg-white radial-gradient-bg"></div> */}
-            <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
-              className="flex flex-col gap-2"
-            >
-              <h1 className="text-4xl font-medium text-center">6 mil</h1>
-              <p className="text-sm opacity-70 text-center">
-                The company&#39;s annual net income
-              </p>
-            </motion.div>
-            <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
-              className="flex flex-col gap-2"
-            >
-              <h1 className="text-4xl font-medium text-center">315</h1>
-              <p className="text-sm opacity-70 text-center">
-                Projects completed worldwide
-              </p>
-            </motion.div>
-            <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
-              className="flex flex-col gap-2"
-            >
-              <h1 className="text-4xl font-medium text-center">120K</h1>
-              <p className="text-sm opacity-70 text-center">
-                Employees work in all parts of the world
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
+      <section className="w-full relative">
+        <figure className="w-full md:h-[450px] h-[400px] object-cover brightness-75">
+          <img
+            src="/images/warehouse-climate-control.jpg"
+            alt="wharehouse control"
+            className="h-full w-full object-cover"
+          />
+        </figure>
+        <img
+          src="/images/warehouse-service-control.png"
+          alt="warehouse-control-service"
+          className="absolute xl:-bottom-28 lg:-bottom-24 md:-bottom-20 sm:-bottom-16 -bottom-10"
+        />
       </section>
 
-      <section className="md:pt-20 pt-52 pb-20">
+      <section className="py-16 md:mt-32 mt-24">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className="wrapper space-y-20"
+          className="wrapper space-y-8"
         >
-          <div className="grid sm:grid-cols-2 md:gap-0 gap-6 items-center">
-            <motion.p
-              variants={fadeIn("right", "tween", 0.2, 1)}
-              className="sm:text-4xl text-3xl"
-            >
-              Focus on quality,{" "}
-              <span className="opacity-40">we maintain customer trust</span>
-            </motion.p>
-            <motion.p
-              variants={fadeIn("left", "tween", 0.2, 1)}
-              className="opacity-60"
-            >
-              We ensure that every installation we build has strict quality
-              checks, Sustainable solutions for an environmentally friendly and
-              renewable future.
-            </motion.p>
-          </div>
+          <motion.div
+            variants={fadeIn("top", "tween", 0.2, 0.5)}
+            className="uppercase bg-primary text-white w-max p-2 px-4 mx-auto font-semibold text-lg rounded-tr-3xl rounded-bl-3xl"
+          >
+            SERVICES
+          </motion.div>
 
           <motion.div
-            variants={fadeIn("up", "tween", 0.2, 1)}
-            className="flex flex-wrap justify-center"
+            variants={fadeIn("top", "tween", 0.2, 0.5)}
+            className="grid sm:grid-cols-3 py-4  bg-background rounded"
           >
-            <AnimationWrapper className="w-[200px] h-[200px] cursor-pointer rounded-full bg-foreground flex items-center font-semibold justify-center transition duration-300 hover:drop-shadow hover:shadow hover:bg-white hover:text-primary">
-              Trend
-            </AnimationWrapper>
-            <AnimationWrapper className="w-[200px] h-[200px] cursor-pointer rounded-full bg-foreground flex items-center font-semibold justify-center transition duration-300 hover:drop-shadow hover:shadow hover:bg-white hover:text-primary">
-              Tellia Cygate
-            </AnimationWrapper>
-            <AnimationWrapper className="w-[200px] h-[200px] cursor-pointer rounded-full bg-foreground flex items-center font-semibold justify-center transition duration-300 hover:drop-shadow hover:shadow hover:bg-white hover:text-primary">
-              Business
-            </AnimationWrapper>
-            <AnimationWrapper className="w-[200px] h-[200px] cursor-pointer rounded-full bg-foreground flex items-center font-semibold justify-center transition duration-300 hover:drop-shadow hover:shadow hover:bg-white hover:text-primary">
-              headspace
-            </AnimationWrapper>
-            <AnimationWrapper className="w-[200px] h-[200px] cursor-pointer rounded-full bg-foreground flex items-center font-semibold justify-center transition duration-300 hover:drop-shadow hover:shadow hover:bg-white hover:text-primary">
-              Medtronic
-            </AnimationWrapper>
+            <ul className="list-disc px-6">
+              <li>Inbound Stroe management</li>
+              <li>Warehouse operation</li>
+              <li>Distribution Management</li>
+              <li>Picking/Packing & CKD/CBU packing</li>
+              <li>Assemble line operation</li>
+            </ul>
+
+            <ul className="list-disc px-6">
+              <li>Quality inspection</li>
+              <li>Store/SPO/PG Warehouse Management</li>
+              <li>Sequencing Project</li>
+              <li>VMI Warehouse</li>
+              <li>Fulfilment center</li>
+            </ul>
+
+            <ul className="list-disc px-6">
+              <li>Stack receipt</li>
+              <li>Supply chain consultancy</li>
+              <li>
+                Production Plan - Pull out servicing, kit loading, tralley
+                loading, double veining & tralley line-up.
+              </li>
+              <li>Contract Logistics</li>
+            </ul>
           </motion.div>
         </motion.div>
       </section>
@@ -210,9 +119,13 @@ const Services = () => {
             className="mt-10 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4"
           >
             {multimodalTransPortations.map(
-              ({ title, description, offers }, index) => (
+              ({ title, description, offers, image }, index) => (
                 <div key={index}>
-                  <div className="h-[200px] rounded-xl shadow mb-2"></div>
+                  <img
+                    src={image}
+                    alt={title}
+                    className="h-[200px] rounded-xl shadow mb-2 brightness-90"
+                  />
                   <div className="">
                     <h3 className="text-primary">{title}</h3>
                     <p className="text-sm my-2">{description}</p>
@@ -228,6 +141,50 @@ const Services = () => {
                 </div>
               )
             )}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <section className="py-16">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper bg-background space-y-8 grid md:grid-cols-2 items-center gap-4 py-4"
+        >
+          <motion.figure variants={fadeIn("right", "tween", 0.2, 0.5)}>
+            <img
+              src="/images/2-10.png"
+              alt="image"
+              className="w-[80%] mx-auto"
+            />
+          </motion.figure>
+
+          <motion.div variants={fadeIn("left", "tween", 0.2, 0.5)} className="">
+            <ul className="list-outside marker:text-primary  list-disc px-6">
+              <li>Smart Tag Trace returanable Packaging Asset Management.</li>
+              <li>
+                Utilizes state-of-the-art globally standardized technologies
+                such as QR Code,RFID, sensors, and gateways.
+              </li>
+              <li>
+                Helps monitor the lifecycle management of packing equipment.
+              </li>
+              <li>
+                Provides real-time visibility of stock across all locations.
+              </li>
+              <li>
+                Monitors critical parameters like stock levels, stock aging,
+                retention time, and cycle days.
+              </li>
+              <li>Sets thresholds for controlledandseamlessoperations.</li>
+              <li>
+                Identifies and improves the performance of non-movingRPE
+                (Returnable Packaging Equipment).
+              </li>
+              <li>Reducesthe number of RPE lost in the supply chain.</li>
+            </ul>
           </motion.div>
         </motion.div>
       </section>
@@ -249,6 +206,99 @@ const Services = () => {
           </motion.h1>
 
           <Cards />
+        </motion.div>
+      </section>
+
+      <section className="py-16">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="wrapper space-y-12"
+        >
+          <motion.div
+            variants={fadeIn("left", "tween", 0.2, 0.5)}
+            className="flex flex-col items-center justify-center gap-2"
+          >
+            <h2 className="md:text-5xl text-3xl font-bold">PACKAGING</h2>
+            <p className="text-center text-text">
+              We have Completely Returnable packaging solutions& Images of all
+              ditf.Types of packaging
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeIn("left", "tween", 0.2, 0.5)}
+            className=" grid md:grid-cols-2 gap-6"
+          >
+            <div>
+              <h4 className="text-lg text-primary font-medium mb-2">
+                Visual Packaging Solution Design
+              </h4>
+              <p>
+                We have a dedicated solution design tem that specializes in
+                material-tevel knowledge and can design solutions based on
+                inputs provided by the customers about the component/part
+                produce feasibility reports for all your packaging needs
+                consultation.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg text-primary font-medium mb-2">
+                Packaging Product Manufactureing & Development
+              </h4>
+              <p>
+                The range of products and services by VINSUM AXPRESS are
+                designed keeping in mind the flexible and customized needs of a
+                customer as per their demand. We offer customized solutions in
+                various materials i.e. PP, Plastic (HDP/LDP), Metal (Iron,
+                Steel, Wire mesh), Wood & Paper Corrugated etc.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg text-primary font-medium mb-2">
+                OPEX Modal - Product Rent (Per Trip Basis)
+              </h4>
+              <p>
+                The returanable packaging/Pooling Concept Services in a way that
+                VINSUM AXPRESS owned product provided on Rental as a Service. A
+                norminal rent is charged for the use of product on per trip
+                basis with Reverse logistics facilities. It is a growing service
+                to reduce capital expenditures and improves Day to Day Supply
+                Chain Operations for Customers.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg text-primary font-medium mb-2">
+                CAPEX Modal - Product on Sale
+              </h4>
+              <p>
+                In capex Modal, we design and develop Customized packaging
+                product for their specific needs. The ownership of the packaging
+                product lies with the customer as it is a one time sale by
+                VINSUM AXPRESS and the services for reverse logistics to keep
+                the supply chain moving can be managed by VINSUM AXPRESS
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg text-primary font-medium mb-2">
+                Product on Fix Rental
+              </h4>
+              <p>
+                The returanable packaging/Pooling Concept Services, VINSUM
+                AXPRESS owned product provided on rental as a Service. A fix
+                rent is charged for the use of product on monthly basis with
+                Non-Reverse facilities. It is a growing service method to reduce
+                capital expenditures and improve Day to Day Supply Chain
+                Operations for Customers.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -279,8 +329,8 @@ const Services = () => {
             <div className="mt-6">
               <h3 className="text-lg font-semibold">Layered securily</h3>
               <p className="text-sm opacity-60 mt-2">
-                With layred securily, we ensure the ssfty of every unit we
-                provide.
+                Packaging Solution Greeen returnable & Custmized Packaging
+                Solution
               </p>
             </div>
           </div>
@@ -292,7 +342,7 @@ const Services = () => {
                 Quality control of each part
               </h3>
               <p className="text-sm opacity-60 mt-2">
-                Every unit you send a checked carefully for every details.
+                Multi-modal Transportation Surface Train & Air
               </p>
             </div>
           </div>
@@ -304,8 +354,7 @@ const Services = () => {
                 Reliable customer service
               </h3>
               <p className="text-sm opacity-60 mt-2">
-                Our customer service is available 24 hours a week with qualified
-                people.
+                Warehouse Management Dashboard Enables WMS
               </p>
             </div>
           </div>
@@ -315,7 +364,7 @@ const Services = () => {
             <div className="mt-6">
               <h3 className="text-lg font-semibold">Maintenance</h3>
               <p className="text-sm opacity-60 mt-2">
-                We provide a guidebook that can be used ro ensure maxium care.
+                Value Added Service ownership of Quality People & Processess
               </p>
             </div>
           </div>
@@ -334,12 +383,9 @@ const Services = () => {
           <div className="bg-white rounded-br-xl p-4 py-6 border border-neutral-200 border-t-0">
             <EarthLock className="text-primary" />
             <div className="mt-6">
-              <h3 className="text-lg font-semibold">
-                Based on artifical intelligence
-              </h3>
+              <h3 className="text-lg font-semibold">Based on integrated</h3>
               <p className="text-sm opacity-60 mt-2">
-                You can control and view each unit from your phone. It&#39;s
-                very easy to use.
+                Consultancy Design & Implement Integrated Solution
               </p>
             </div>
           </div>

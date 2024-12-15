@@ -173,73 +173,83 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="flex">
             <figure className="w-fit">
-              <img src="/images/QR.png" alt="qr-code" className="md:w-auto md:h-auto w-40 h-40 object-contain" />
+              <img
+                src="/images/QR.png"
+                alt="qr-code"
+                className="md:w-auto md:h-auto w-40 h-40 object-contain"
+              />
               {/* <figcaption className="text-xs text-text text-center">
                 Scan this QR code to download our app
               </figcaption> */}
             </figure>
-            <ul className="mt-2 flex items-center md:justify-center gap-4 flex-wrap">
-              <li>
-                <a
-                  href={companyDetail.facebook}
-                  target="_blank"
-                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
-                >
-                  <FaFacebookF />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={ROUTES.MEDIACENTER}
-                  target="_blank"
-                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
-                >
-                  <FaInstagram />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={companyDetail.linkedin}
-                  target="_blank"
-                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={companyDetail.twitter}
-                  target="_blank"
-                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
-                >
-                  <FaXTwitter />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={companyDetail.youtube}
-                  target="_blank"
-                  className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
-                >
-                  <FaYoutube />
-                </a>
-              </li>
-            </ul>
+
             {/* <h3 className="font-semibold">Social Media</h3>
              */}
           </div>
         </motion.div>
 
-        <motion.p
-          variants={fadeIn("right", "tween", 0.2, 1)}
-          className="mt-8 text-sm text-text"
-        >
-          © Copyright 2024
-          <span className="text-primary ml-1">Vinsum Axpress</span>. All Rights
-          Reserved
-        </motion.p>
+        <div className="flex justify-between">
+          <motion.p
+            variants={fadeIn("right", "tween", 0.2, 1)}
+            className="mt-8 text-sm text-text"
+          >
+            © Copyright 2024
+            <span className="text-primary ml-1">Vinsum Axpress</span>. All
+            Rights Reserved
+          </motion.p>
+          <motion.ul
+            variants={fadeIn("left", "tween", 0.2, 1)}
+            className="mt-2 flex items-center gap-4"
+          >
+            <li>
+              <a
+                href={companyDetail.facebook}
+                target="_blank"
+                className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
+              >
+                <FaFacebookF />
+              </a>
+            </li>
+            <li>
+              <a
+                href={ROUTES.MEDIACENTER}
+                target="_blank"
+                className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
+              >
+                <FaInstagram />
+              </a>
+            </li>
+            <li>
+              <a
+                href={companyDetail.linkedin}
+                target="_blank"
+                className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
+              >
+                <FaLinkedinIn />
+              </a>
+            </li>
+            <li>
+              <a
+                href={companyDetail.twitter}
+                target="_blank"
+                className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
+              >
+                <FaXTwitter />
+              </a>
+            </li>
+            <li>
+              <a
+                href={companyDetail.youtube}
+                target="_blank"
+                className={`w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-primary hover:text-white transition duration-300 focus:bg-primary focus:text-white`}
+              >
+                <FaYoutube />
+              </a>
+            </li>
+          </motion.ul>
+        </div>
       </motion.div>
     </footer>
   );

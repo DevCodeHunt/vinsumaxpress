@@ -77,7 +77,7 @@ const About = () => {
           className="wrapper"
         >
           <motion.figure variants={zoomIn(0.02, 1)}>
-            <img src="/images/road-map.png" alt="road-map" />
+            <img src="/images/road-map.png" alt="road-map" className="w-[90%] mx-auto" />
           </motion.figure>
         </motion.div>
 
@@ -144,7 +144,7 @@ const About = () => {
             variants={fadeIn("left", "tween", 0.2, 1)}
             className="lg:col-span-2"
           >
-            <img src="/images/network-map.png" alt="network-map" />
+            <img src="/images/network-map.png" alt="network-map" className="" />
           </motion.figure>
         </motion.div>
       </section>

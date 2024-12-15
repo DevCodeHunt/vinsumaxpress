@@ -146,31 +146,19 @@ const AboutSection2 = () => {
 
         <motion.div
           variants={fadeIn("up", "tween", 0.2, 1)}
-          className="rounded-2xl relative lg:aspect-auto lg:h-[400px] aspect-video w-full"
+          className="relative lg:aspect-auto lg:h-[400px] aspect-video w-full overflow-hidden"
         >
-          <video ref={videoRef} muted autoPlay title="Video Indroduction">
-            <source src="/videos/growth-track.mp4" type="video/mp4"></source>
-          </video>
-          <div className="absolute -bottom-1 left-0 right-0 bg-background z-10 h-4"></div>
-          {/* <video
+          <video
             ref={videoRef}
             muted
-            loop
             autoPlay
-            title="Video Indroduction"
-            poster="https://cdn.pixabay.com/photo/2014/09/11/22/00/dock-441989_1280.jpg"
-            className="w-full h-full absolute inset-0 z-10 object-cover rounded-2xl"
+            title="Growth Track"
+            className="w-full h-full object-cover"
           >
-            <source src="/videos/vinsum-about.mp4" type="video/mp4"></source>
+            <source src="/videos/growth-track.mp4" type="video/mp4"></source>
           </video>
-          <div className="absolute inset-0 bg-background/50 z-10 rounded-2xl flex items-center justify-center">
-            <button
-              onClick={togglePlayPause}
-              className="w-16 h-16 flex items-center justify-center rounded-full bg-white/40 text-2xl"
-            >
-              {isPaused ? <FaPlay /> : <FaPause />}
-            </button>
-          </div> */}
+          <div className="absolute  right-0 top-0 bottom-0 bg-background w-1 z-10 h-full"></div>
+          <div className="absolute -bottom-1 left-0 right-0 bg-background z-10 h-4"></div>
         </motion.div>
       </Card>
     </section>

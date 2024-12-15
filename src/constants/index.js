@@ -273,7 +273,8 @@ export const serviceData = [
 
 export const multimodalTransPortations = [
   {
-    image: "/images/",
+    image:
+      "https://vinsumaxpress.com/assets/img/gallery/vinsum-axpress-warehouse-image-30.jpg",
     title: "Road Services",
     description:
       "Catering to the needs of our clients, we offer high volume of freight transportation by roads.",
@@ -287,7 +288,8 @@ export const multimodalTransPortations = [
     ],
   },
   {
-    image: "/images/",
+    image:
+      "https://vinsumaxpress.com/assets/img/gallery/vinsum-axpress-warehouse-image-30.jpg",
     title: "Speed Truck Services",
     description:
       "VINSUM is an organization who provides same day delivery to Customers at their Specified Locations considering the Customer Requirement in Current Scenario.",
@@ -298,7 +300,8 @@ export const multimodalTransPortations = [
     ],
   },
   {
-    image: "/images/",
+    image:
+      "https://vinsumaxpress.com/assets/img/gallery/vinsum-axpress-warehouse-image-30.jpg",
     title: "Rail Services",
     description:
       "We collabarate with DFC, Indian Railways, and the Ministry of Railways under the PM Gati Shakti plan fo greener logistics. We currently operate 6 routes with dedicated freight trains and VPU wagons, connecting North India wuth Bangalore, Chennai, kolkata, Guwahati, and Gujarat.",
@@ -310,7 +313,8 @@ export const multimodalTransPortations = [
     ],
   },
   {
-    image: "/images/",
+    image:
+      "https://vinsumaxpress.com/assets/img/gallery/vinsum-axpress-warehouse-image-30.jpg",
     title: "Air Services",
     description:
       "Our expeienced staff organize national and international air cargo shipping for a wide range of cargoes by selecting optimal routes based on your individual needs",
@@ -482,14 +486,14 @@ export const leadershipTeams = [
     instagram: "",
     linkedin: "",
   },
-  {
-    image: "/images/man-placeholder.png",
-    name: "Mr. Sumit Sharma",
-    position: "Head Branding",
-    twitter: "",
-    instagram: "",
-    linkedin: "",
-  },
+  // {
+  //   image: "/images/man-placeholder.png",
+  //   name: "Mr. Sumit Sharma",
+  //   position: "Head Branding",
+  //   twitter: "",
+  //   instagram: "",
+  //   linkedin: "",
+  // },
   {
     image: "https://vinsumaxpress.com/assets/img/team/tc_web.jpg",
     name: "Mr. T.C Sharma",
@@ -538,14 +542,14 @@ export const leadershipTeams = [
     instagram: "",
     linkedin: "",
   },
-  {
-    image: "https://vinsumaxpress.com/assets/img/team/sudhir%20bansal.jpg",
-    name: "Mr. Sudhir Mohan Bansal",
-    position: "President",
-    twitter: "",
-    instagram: "",
-    linkedin: "",
-  },
+  // {
+  //   image: "https://vinsumaxpress.com/assets/img/team/sudhir%20bansal.jpg",
+  //   name: "Mr. Sudhir Mohan Bansal",
+  //   position: "President",
+  //   twitter: "",
+  //   instagram: "",
+  //   linkedin: "",
+  // },
   {
     image: "https://vinsumaxpress.com/assets/img/team/SUPRIYA_HR.jpg",
     name: "Mrs. Supriya Dutt",
@@ -792,3 +796,6 @@ export const faqs = [
       "No, our technology services are included in our overall pricing. There are no hidden fees for utilizing our tracking or management tools.",
   },
 ];
+
+// Service
+export const services = [];
